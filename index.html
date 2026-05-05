@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pensiunea Dulce Ambient | Cazare în Păuliș, Arad</title>
+<meta name="description" content="Cazare primitoare în Păuliș, aproape de Arad. Camere curate, mic dejun, terasă, curte interioară și zonă de grătar. Potrivită pentru tranzit."/>
+<meta property="og:title" content="Pensiunea Dulce Ambient | Cazare în Păuliș, Arad"/>
+<meta property="og:description" content="Cazare primitoare în Păuliș, aproape de Arad."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FAF6EF; --sand:#F1E7D8; --ink:#2B2118;
+  --wood:#5A351F; --deep:#301C12; --terra:#B65A3C;
+  --stone:#8C867A; --green:#3F5F3A; --gold:#C7A057;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Manrope',sans-serif;font-weight:400;overflow-x:hidden}
+img{max-width:100%;display:block;object-fit:cover}
+a{color:inherit;text-decoration:none}
+
+/* SECTION TRANSITIONS - soft top/bottom fades */
+section::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:60px;
+  background:inherit;
+  pointer-events:none;
+  z-index:2;
+  opacity:0;
+}
+
+/* Each section gets a subtle top shadow for depth */
+.section-sep{
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(90,53,31,.15),transparent);
+  position:relative;
+  z-index:10;
+}
+
+/* Soft bottom fade on image sections */
+.kitchen-section::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:80px;
+  background:linear-gradient(0deg,rgba(250,246,239,.6),transparent);
+  pointer-events:none;
+  z-index:3;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:120px;
+  background:linear-gradient(0deg,var(--cream),transparent);
+  pointer-events:none;
+  z-index:3;
+}
+.cta-section::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:80px;
+  background:linear-gradient(0deg,var(--ink),transparent);
+  pointer-events:none;
+  z-index:3;
+}
+
+
+/* Text shadows for depth - subtle emboss on light, drop on dark */
+.kitchen-section h2{text-shadow:0 2px 20px rgba(0,0,0,.3) !important}
+.cta-section h2{text-shadow:0 2px 24px rgba(0,0,0,.4) !important}
+.rooms-section h2,.gallery-section h2,.booking-section h2,
+.terrace-section h2,.breakfast-section h2,.location-section h2,
+.reviews-section h2{text-shadow:0 1px 0 rgba(255,255,255,.9),0 2px 8px rgba(43,33,24,.05)}
+/* Large titles tighter letter-spacing */
+h2 em{letter-spacing:-.025em}
+
+
+/* DROP CAPITAL - magazine style */
+.drop-cap::first-letter{
+  font-family:'Fraunces',serif;
+  font-size:4.2em;
+  font-weight:300;
+  font-style:italic;
+  float:left;
+  line-height:.78;
+  margin-right:.08em;
+  margin-top:.06em;
+  color:var(--gold);
+}
+
+/* WARM SHADOWS */
+:root{
+  --shadow-sm: 0 2px 8px rgba(90,53,31,.08), 0 1px 2px rgba(90,53,31,.06);
+  --shadow-md: 0 4px 20px rgba(90,53,31,.12), 0 2px 6px rgba(90,53,31,.08);
+  --shadow-lg: 0 8px 40px rgba(90,53,31,.16), 0 4px 12px rgba(90,53,31,.10);
+  --shadow-xl: 0 16px 60px rgba(90,53,31,.20), 0 6px 20px rgba(90,53,31,.12);
+}
+
+/* REVEAL ANIMATIONS - visible by default, animate as enhancement */
+.reveal{opacity:1;transform:none}
+.reveal.will-animate{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.will-animate.visible{opacity:1;transform:none}
+.reveal.will-animate.reveal-delay-1{transition-delay:.08s}
+.reveal.will-animate.reveal-delay-2{transition-delay:.16s}
+.reveal.will-animate.reveal-delay-3{transition-delay:.24s}
+
+/* CARD STACK TRANSITIONS */
+.stack-card{
+  position:relative;
+  z-index:1;
+  transform-origin:top center;
+  transition:transform .1s linear, filter .1s linear, border-radius .1s linear;
+  will-change:transform,filter;
+  margin:0;
+  padding:0;
+  line-height:0;
+}
+.stack-card > *{line-height:normal}
+.stack-card::after{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:60px;
+  background:linear-gradient(180deg,rgba(0,0,0,.18),transparent);
+  pointer-events:none;
+  z-index:10;
+  opacity:0;
+  transition:opacity .4s;
+}
+.stack-card.stacked::after{opacity:1}
+
+
+.hero-btn{
+  display:inline-block;
+  color:#ffffff;
+  border:1px solid rgba(255,255,255,.5);
+  padding:14px 36px;
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-family:'Manrope',sans-serif;
+  backdrop-filter:blur(8px);
+  background:rgba(255,255,255,.08);
+  transition:background .3s,border-color .3s;
+}
+.hero-btn:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.8)}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;color:var(--cream)}
+nav.scrolled{background:rgba(250,246,239,.95);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(90,53,31,.12),0 1px 0 rgba(43,33,24,.08);color:var(--ink)}
+nav.scrolled .nav-name{color:var(--ink)}
+nav.scrolled .nav-sub{color:var(--stone)}
+nav.scrolled .nav-icon{border-color:var(--ink);color:var(--ink)}
+nav.scrolled .nav-links a{color:var(--ink)}
+nav.scrolled .nav-phone{color:var(--ink)}
+.nav-brand{display:flex;align-items:center;gap:12px}
+.nav-icon{width:38px;height:38px;border:1.5px solid rgba(250,246,239,.8);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:14px;letter-spacing:.05em;color:var(--cream);transition:border-color .3s,color .3s}
+.nav-name{font-family:'Fraunces',serif;font-size:15px;font-weight:400;color:var(--cream);transition:color .3s}
+.nav-sub{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(250,246,239,.6);display:block;margin-top:1px;transition:color .3s}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,246,239,.85);transition:color .2s,opacity .2s}
+.nav-links a:hover{color:var(--cream);opacity:1}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-phone{font-size:13px;letter-spacing:.02em;display:flex;align-items:center;gap:6px;color:rgba(250,246,239,.9);transition:color .3s}
+.btn-primary{background:var(--ink);color:var(--cream);padding:10px 24px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-family:'Manrope',sans-serif;border:none;cursor:pointer;transition:background .2s,box-shadow .2s,transform .2s;display:inline-block;box-shadow:var(--shadow-sm)}
+.btn-primary:active{transform:translateY(1px);box-shadow:none}
+.btn-primary:hover{background:var(--terra)}
+.btn-wa{background:var(--green);color:var(--cream);padding:10px 24px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s,box-shadow .2s,transform .2s;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow-sm)}
+.btn-wa:active{transform:translateY(1px);box-shadow:none}
+.btn-wa:hover{background:#2d4a28}
+.btn-ghost{background:transparent;color:var(--ink);padding:10px 24px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;border:1.5px solid var(--ink);cursor:pointer;transition:all .2s;display:inline-block}
+.btn-ghost:hover{background:var(--ink);color:var(--cream)}
+@media(max-width:900px){.nav-links{display:none}.nav-phone{display:none}}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-content{position:relative;z-index:2;text-align:center;padding:20px;display:flex;flex-direction:column;align-items:center;gap:28px}
+.hero-label{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.65);font-family:'Manrope',sans-serif}
+.hero-t1{display:block;font-family:'Fraunces',serif;font-size:clamp(28px,4.5vw,58px);font-weight:300;color:rgba(255,255,255,.85);line-height:1;letter-spacing:.04em;text-transform:uppercase;font-family:'Manrope',sans-serif}
+.hero-t2{display:block;font-family:'Fraunces',serif;font-size:clamp(68px,12vw,148px);font-weight:300;font-style:italic;color:#ffffff;line-height:.88;letter-spacing:-.03em;margin-top:-4px}
+.hero-btn{display:inline-block;color:#ffffff;border:1px solid rgba(255,255,255,.45);padding:13px 36px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-family:'Manrope',sans-serif;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);transition:all .3s}
+.hero-btn:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.8)}
+.hero-nav-chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:4px}
+.hero-chip{color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.2);padding:7px 16px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-family:'Manrope',sans-serif;background:rgba(255,255,255,.06);backdrop-filter:blur(8px);transition:all .25s}
+.hero-chip:hover{background:rgba(199,160,87,.25);border-color:rgba(199,160,87,.6);color:#fff}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(30,18,10,.15) 0%,rgba(30,18,10,.55) 100%)}
+.hero-bg{position:absolute;inset:0;background:#301C12}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kenburns 20s ease-in-out infinite alternate}
+@keyframes kenburns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.08) translate(-1%,-1%)}}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(48,28,18,.2) 0%,rgba(48,28,18,.55) 100%)}
+.hero-content{position:relative;z-index:2;padding:40px;text-align:center;max-width:800px;display:flex;flex-direction:column;align-items:center;gap:32px}
+.hero-eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(250,246,239,.9);margin-bottom:24px;display:flex;align-items:center;gap:16px}
+.hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold)}
+/* hero-title replaced by hero-t1/hero-t2 */
+
+.hero-desc{font-size:16px;color:rgba(250,246,239,.95);line-height:1.7;max-width:480px;margin-bottom:40px;font-weight:300}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:40px}
+.badge{background:rgba(250,246,239,.08);border:1px solid rgba(250,246,239,.15);color:rgba(250,246,239,.8);padding:5px 12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.hero-scroll{position:absolute;bottom:32px;right:40px;z-index:2;color:rgba(250,246,239,.75);font-size:11px;letter-spacing:.15em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-line{width:1px;height:40px;background:rgba(250,246,239,.3);animation:scrollpulse 2s ease-in-out infinite}
+@keyframes scrollpulse{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:.8;transform:scaleY(1.2)}}
+
+/* MARQUEE */
+.marquee-wrap{background:var(--ink);color:var(--cream);padding:18px 0;overflow:hidden;border-top:1px solid rgba(250,246,239,.1)}
+.marquee-track{display:flex;gap:0;animation:marquee 30s linear infinite;width:max-content}
+.marquee-item{display:flex;align-items:center;gap:40px;padding:0 20px;font-size:12px;letter-spacing:.25em;text-transform:uppercase;white-space:nowrap}
+.marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:80px 40px}
+.container{max-width:1400px;margin:0 auto}
+.eyebrow{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--stone);margin-bottom:24px;display:flex;align-items:center;gap:20px}
+.eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
+h2{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,72px);line-height:1.1;font-weight:300;color:#2B2118;letter-spacing:-.02em}
+h2 strong{font-weight:600}
+h2 em{font-style:italic}
+/* Eyebrow with gold accent line */
+.eyebrow{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--stone);margin-bottom:24px;display:flex;align-items:center;gap:20px}
+.eyebrow::before{content:'';width:28px;height:2px;background:var(--gold);flex-shrink:0;border-radius:1px}
+h2 em{font-style:italic}
+.hairline{height:1px;background:linear-gradient(90deg,transparent,rgba(43,33,24,.2),transparent);margin:40px 0}
+
+/* STORY */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.story-img-wrap{position:relative}
+.story-img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.story-card{position:absolute;bottom:-24px;right:-24px;background:var(--cream);border:1px solid rgba(43,33,24,.12);padding:20px;max-width:200px;box-shadow:var(--shadow-lg);color:var(--ink)}
+.story-card-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);margin-bottom:6px}
+.story-card-text{font-family:'Fraunces',serif;font-size:18px;font-style:italic;line-height:1.3;color:var(--ink)}
+.story-card-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);margin-bottom:6px}
+.story-card-text{font-family:'Fraunces',serif;font-size:18px;font-style:italic;line-height:1.3}
+.story-text{font-size:16px;line-height:1.8;color:rgba(43,33,24,.88);margin-bottom:24px}
+.story-values{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.value-tag{border:1px solid rgba(43,33,24,.2);padding:8px 16px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;box-shadow:var(--shadow-sm);transition:box-shadow .2s,transform .2s;color:var(--ink);background:var(--cream)}
+.value-tag:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+@media(max-width:900px){.story-grid{grid-template-columns:1fr}.story-card{display:none}}
+
+/* KEY ANIMATION */
+.key-section{background:var(--cream);padding:80px 40px;text-align:center;overflow:hidden}
+.key-animation{display:flex;justify-content:center;align-items:center;gap:0;position:relative;height:140px;margin-bottom:32px}
+.key-img{width:70px;position:absolute;animation:keyFloat 3s ease-in-out infinite}
+.lock-img{width:90px;position:absolute;left:50%;transform:translateX(-50%)}
+@keyframes keyFloat{0%,100%{transform:rotate(-15deg) translate(-60px,10px)}50%{transform:rotate(0deg) translate(-40px,0px)}}
+.key-title{font-family:'Fraunces',serif;font-size:28px;font-style:italic;color:rgba(43,33,24,.6)}
+
+/* ROOMS */
+.rooms-section{background:var(--sand);padding:80px 40px}
+.rooms-header{display:grid;grid-template-columns:7fr 5fr;gap:40px;align-items:end;margin-bottom:80px}
+.room-row{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:16px;background:var(--cream);box-shadow:var(--shadow-md);transition:box-shadow .4s cubic-bezier(.22,1,.36,1),transform .4s cubic-bezier(.22,1,.36,1)}
+.room-row:hover{box-shadow:var(--shadow-xl);transform:translateY(-4px)}
+.room-row.reverse{direction:rtl}
+.room-row.reverse>*{direction:ltr}
+.room-img-wrap{overflow:hidden;aspect-ratio:4/3}
+.room-img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.22,1,.36,1);cursor:zoom-in}
+.room-img-wrap:hover .room-img{transform:scale(1.06)}
+.room-info{padding:60px 48px;display:flex;flex-direction:column;justify-content:center;background:#FAF6EF;color:#2B2118}
+.room-number{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8C867A;margin-bottom:16px}
+.room-name{font-family:'Fraunces',serif;font-size:36px;font-weight:300;margin-bottom:8px;color:#2B2118}
+.room-sub{font-size:13px;color:#8C867A;letter-spacing:.05em;margin-bottom:24px}
+.room-desc{font-size:15px;line-height:1.75;color:rgba(43,33,24,.85);margin-bottom:32px}
+.room-features{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.feature{font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid #5A351F;padding:6px 14px;box-shadow:0 2px 6px rgba(90,53,31,.1);color:#2B2118 !important;background:#FAF6EF}
+.room-price{display:inline-flex;align-items:baseline;gap:8px;margin-bottom:20px}
+.room-price-ab{font-family:'Fraunces',serif;font-size:18px;font-weight:300;font-style:italic;color:var(--stone)}
+.room-price-amount{font-family:'Manrope',sans-serif;font-size:32px;font-weight:700;color:var(--wood);letter-spacing:-.02em}
+.room-price-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);font-family:'Manrope',sans-serif}
+.room-price-note{font-size:11px;color:var(--stone);font-style:italic;margin-top:-12px;margin-bottom:16px}
+@media(max-width:900px){.room-row,.room-row.reverse{grid-template-columns:1fr;direction:ltr}.rooms-header{grid-template-columns:1fr}}
+
+/* TERRACE */
+.terrace-section{background:var(--cream);padding:80px 40px}
+.terrace-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:60px}
+.terrace-img{width:100%;aspect-ratio:4/3;object-fit:cover;overflow:hidden;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+.terrace-img-wrap{overflow:hidden;box-shadow:var(--shadow-md);transition:box-shadow .4s,transform .4s}
+.terrace-img-wrap:hover{box-shadow:var(--shadow-xl);transform:translateY(-4px)}
+.terrace-img-wrap:hover .terrace-img{transform:scale(1.05)}
+.terrace-img-wrap.tall{aspect-ratio:3/4}
+.terrace-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-top:12px}
+@media(max-width:900px){.terrace-grid{grid-template-columns:1fr 1fr}}
+
+/* OUTDOOR KITCHEN */
+.kitchen-section{background:linear-gradient(135deg,var(--deep) 0%,#1a0e08 100%);color:var(--cream);padding:80px 40px;position:relative;overflow:hidden}
+.kitchen-bg{position:absolute;inset:0;opacity:.2}
+.kitchen-bg img{width:100%;height:100%;object-fit:cover}
+.kitchen-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:center;position:relative;z-index:1}
+.kitchen-eyebrow{color:rgba(250,246,239,.75)}
+.kitchen-eyebrow::before{background:var(--gold)}
+.kitchen-title{color:var(--cream);margin-bottom:24px}
+.kitchen-desc{color:rgba(250,246,239,.92);font-size:16px;line-height:1.75;margin-bottom:40px}
+.kitchen-features{list-style:none;display:flex;flex-direction:column;gap:16px}
+.kitchen-features li{display:flex;align-items:center;gap:16px;font-size:14px;letter-spacing:.04em;color:rgba(250,246,239,.95)}
+.kitchen-features li::before{content:'';width:24px;height:1px;background:var(--gold);flex-shrink:0}
+.kitchen-photos{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.kitchen-photo{aspect-ratio:3/4;object-fit:cover;width:100%;box-shadow:var(--shadow-lg)}
+.kitchen-photo.wide{aspect-ratio:16/9;grid-column:1/-1}
+@media(max-width:900px){.kitchen-grid{grid-template-columns:1fr}.kitchen-photos{margin-top:40px}}
+
+/* BREAKFAST */
+.breakfast-section{background:var(--sand);padding:80px 40px}
+.breakfast-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.breakfast-img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media(max-width:900px){.breakfast-grid{grid-template-columns:1fr}}
+
+/* GALLERY */
+.gallery-section{background:var(--cream);padding:80px 40px}
+.gallery-filters{display:flex;gap:8px;flex-wrap:wrap;margin:40px 0}
+.filter-btn{background:transparent;border:1px solid rgba(43,33,24,.2);padding:8px 20px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s;font-family:'Manrope',sans-serif}
+.filter-btn.active,.filter-btn:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.gallery-item{overflow:hidden;cursor:pointer;position:relative;box-shadow:var(--shadow-sm);transition:box-shadow .4s,transform .4s}
+.gallery-item:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);z-index:2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.22,1,.36,1);aspect-ratio:4/3}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item[data-hidden="true"]{display:none}
+@media(max-width:700px){.gallery-grid{grid-template-columns:1fr 1fr}}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:1000;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain}
+.lightbox-close{position:absolute;top:24px;right:32px;color:#fff;font-size:32px;cursor:pointer;background:none;border:none;line-height:1}
+
+/* LOCATION */
+.location-section{background:var(--sand);padding:80px 40px 60px}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.map-placeholder{width:100%;aspect-ratio:4/3;background:var(--stone);position:relative;overflow:hidden}
+.map-placeholder iframe{width:100%;height:100%;border:none}
+.location-info{display:flex;flex-direction:column;gap:32px}
+.location-detail{display:flex;flex-direction:column;gap:6px}
+.location-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+.location-value{font-size:16px;line-height:1.5}
+@media(max-width:900px){.location-grid{grid-template-columns:1fr}}
+
+/* ABOUT */
+.about-section{background:var(--cream);padding:80px 40px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-img-wrap{position:relative}
+.about-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;box-shadow:var(--shadow-xl)}
+.about-text{font-size:17px;line-height:1.85;color:rgba(43,33,24,.88);margin-bottom:24px;font-family:'Fraunces',serif;font-style:italic;font-weight:300}
+.about-sub{font-size:15px;line-height:1.75;color:rgba(43,33,24,.85)}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr}}
+
+/* BOOKING */
+.booking-section{background:var(--sand);padding:80px 40px}
+.booking-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px}
+.booking-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-field{display:flex;flex-direction:column;gap:6px}
+.form-field.full{grid-column:1/-1}
+.form-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone)}
+.form-input{background:var(--cream);border:1px solid rgba(43,33,24,.2);padding:12px 16px;font-size:14px;font-family:'Manrope',sans-serif;color:var(--ink);transition:border-color .2s}
+.form-input:focus{outline:none;border-color:var(--wood);box-shadow:0 0 0 3px rgba(90,53,31,.08)}
+.booking-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;grid-column:1/-1}
+@media(max-width:900px){.booking-grid{grid-template-columns:1fr}.booking-form{grid-template-columns:1fr}}
+
+/* FINAL CTA */
+.location-section{background:var(--sand);padding:80px 40px 60px}
+.reviews-section{background:var(--sand);padding:40px 40px 80px}
+.cta-section{position:relative;padding:140px 40px;text-align:center;overflow:hidden;background:var(--deep)}
+.cta-bg{position:absolute;inset:0;opacity:.25}
+.cta-bg img{width:100%;height:100%;object-fit:cover}
+.cta-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(48,28,18,.5),rgba(48,28,18,.8))}
+.cta-content{position:relative;z-index:2;color:var(--cream)}
+.cta-title{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,72px);font-weight:300;margin-bottom:16px}
+.cta-title em{font-style:italic;color:var(--gold)}
+.cta-sub{font-size:16px;color:rgba(250,246,239,.7);margin-bottom:48px}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:60px}
+.footer-brand{font-family:'Fraunces',serif;font-size:22px;margin-bottom:12px}
+.footer-desc{font-size:13px;color:rgba(250,246,239,.75);line-height:1.7}
+.footer-title{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:20px}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;color:rgba(250,246,239,.85);transition:color .2s}
+.footer-links a:hover{color:var(--cream)}
+.footer-bottom{border-top:1px solid rgba(250,246,239,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(250,246,239,.3)}
+@media(max-width:700px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
+
+/* MOBILE STICKY BAR */
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--ink);border-top:1px solid rgba(250,246,239,.1)}
+.mobile-bar-inner{display:grid;grid-template-columns:1fr 1fr 1fr}
+.mobile-bar a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 8px;color:var(--cream);font-size:10px;letter-spacing:.08em;text-transform:uppercase;border-right:1px solid rgba(250,246,239,.1)}
+.mobile-bar a:nth-child(2){background:var(--green);font-weight:600}
+.mobile-bar a:last-child{border:none}
+.mobile-bar svg{width:20px;height:20px}
+@media(max-width:768px){.mobile-bar{display:block}body{padding-bottom:60px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Pensiunea Dulce Ambient",
+  "description": "Cazare primitoare în Păuliș, aproape de Arad. Camere curate, mic dejun, terasă, curte interioară și zonă de grătar.",
+  "url": "https://dulce-ambient.ro",
+  "telephone": "+40744593171",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Str. Principală 69",
+    "addressLocality": "Păuliș",
+    "addressRegion": "Arad",
+    "postalCode": "317235",
+    "addressCountry": "RO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 46.1,
+    "longitude": 21.7
+  },
+  "starRating": {"@type": "Rating", "ratingValue": "2"},
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "Mic dejun", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Terasă", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Parcare", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Grătar", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "WiFi", "value": true}
+  ],
+  "checkinTime": "14:00",
+  "checkoutTime": "11:00",
+  "priceRange": "€",
+  "image": "images/hero.jpg"
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-brand">
+    <div class="nav-icon">DA</div>
+    <div>
+      <div class="nav-name">Pensiunea Dulce Ambient</div>
+      <span class="nav-sub">Păuliș · Arad</span>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#camere">Camere</a>
+    <a href="#terasa">Curte & Terasă</a>
+    <a href="#mic-dejun">Mic dejun</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#locatie">Locație</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="tel:0744593171" class="nav-phone">📞 0744 593 171</a>
+    <a href="#contact" class="btn-primary" style="background:rgba(250,246,239,.15);border:1.5px solid rgba(250,246,239,.5);color:var(--cream)" id="nav-cta">Verifică disponibilitatea</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="images/hero.jpg" alt="Pensiunea Dulce Ambient" class="hero-img"/>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-label">Păuliș · Arad · România</div>
+    <h1 class="hero-title">
+      <span class="hero-t1">Pensiunea</span>
+      <span class="hero-t2">Dulce Ambient</span>
+    </h1>
+    <a href="#contact" class="hero-btn">Verifică disponibilitatea →</a>
+    <div class="hero-nav-chips">
+      <a href="#camere" class="hero-chip">🛏 Camere</a>
+      <a href="#contact" class="hero-chip">📅 Rezervă</a>
+      <a href="#locatie" class="hero-chip">📍 Locație</a>
+      <a href="#locatie" class="hero-chip">👫 Despre noi</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track" id="marqueeTrack">
+    <span class="marquee-item">Mic dejun disponibil<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Camere cu baie proprie<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Terasă acoperită<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Curte interioară liniștită<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Zonă de grătar<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Potrivit pentru tranzit<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Contact rapid pe WhatsApp<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Aproape de Arad<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Mic dejun disponibil<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Camere cu baie proprie<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Terasă acoperită<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Curte interioară liniștită<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Zonă de grătar<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Potrivit pentru tranzit<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Contact rapid pe WhatsApp<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Aproape de Arad<span class="marquee-dot"></span></span>
+  </div>
+</div>
+<div class="section-sep"></div>
+<!-- STORY -->
+<section style="background:var(--cream)">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-img-wrap reveal">
+        <img src="images/exterior-front.jpg" alt="Casa pensiunii" class="story-img"/>
+        <div class="story-card">
+          <div class="story-card-label">Familia Lazăr</div>
+          <div class="story-card-text">Adina & Mircea vă așteaptă</div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow reveal">Despre noi</div>
+        <h2 class="reveal reveal-delay-1"><span style="font-weight:300">O pensiune</span> <em style="color:var(--gold);font-weight:400">mică</em><br/><span style="font-weight:300">și familială în Păuliș</span></h2>
+        <div class="hairline"></div>
+        <p class="story-text reveal reveal-delay-2 drop-cap">La Pensiunea Dulce Ambient, oaspeții sunt primiți într-un loc simplu, curat și liniștit, administrat cu grijă de familia Lazăr. Situată în Păuliș, aproape de Arad, pensiunea este o alegere practică pentru cei aflați în tranzit sau pentru cei care caută o cazare relaxată.</p>
+        <p class="story-text reveal reveal-delay-2">Cu mic dejun la cerere, terasă acoperită, curte interioară și bucătărie exterioară cu cuptor de piatră — tot ce ai nevoie pentru o noapte bună sau câteva zile de odihnă.</p>
+        <div class="story-values reveal reveal-delay-3">
+          <span class="value-tag">Ospitalitate</span>
+          <span class="value-tag">Grijă</span>
+          <span class="value-tag">Familie</span>
+          <span class="value-tag">Respect</span>
+          <span class="value-tag">Liniște</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ROOMS -->
+<section class="rooms-section" id="camere">
+  <div class="container">
+    <div class="rooms-header">
+      <div>
+        <div class="eyebrow reveal">Camere</div>
+        <h2 class="reveal reveal-delay-1"><span style="font-weight:300">Patru tipuri de camere,</span><br/><em style="color:var(--gold);font-weight:400">toate cu baie proprie.</em></h2>
+      </div>
+      <p class="reveal reveal-delay-2" style="font-size:15px;line-height:1.75;color:rgba(43,33,24,.85)">Toate camerele au lenjerie proaspăt călcată, baie privată și ferestre care dau spre curte sau spre grădină.</p>
+    </div>
+
+    <!-- Room 1 -->
+    <div class="room-row reveal">
+      <div class="room-img-wrap"><img src="images/zimmer-4-main.jpg" alt="Cameră Dublă" class="room-img"/></div>
+      <div class="room-info">
+        <div class="room-number">01</div>
+        <div class="room-name">Cameră Dublă</div>
+        <div class="room-sub">Pat matrimonial · Baie proprie</div>
+        <div class="room-price"><span class="room-price-ab">ab</span><span class="room-price-amount">180</span><span class="room-price-label">Lei / noapte</span></div>
+        <p class="room-desc">Cameră liniștită cu pat dublu, ideală pentru cupluri sau călători care preferă spațiu suplimentar.</p>
+        <div class="room-features">
+          <span class="feature">Pat matrimonial</span>
+          <span class="feature">Baie proprie</span>
+          <span class="feature">AC</span>
+          <span class="feature">Lenjerie curată</span>
+        </div>
+        <a href="#contact" class="btn-primary" style="align-self:flex-start">Întreabă disponibilitatea</a>
+      </div>
+    </div>
+
+    <!-- Room 2 -->
+    <div class="room-row reverse reveal">
+      <div class="room-img-wrap"><img src="images/zimmer-3-main.jpg" alt="Cameră Twin" class="room-img"/></div>
+      <div class="room-info">
+        <div class="room-number">02</div>
+        <div class="room-name">Cameră Twin</div>
+        <div class="room-sub">Două paturi single · Baie proprie</div>
+        <div class="room-price"><span class="room-price-ab">ab</span><span class="room-price-amount">160</span><span class="room-price-label">Lei / noapte</span></div>
+        <p class="room-desc">Ideală pentru doi călători care vor paturi separate — colegi de drum, șoferi sau prieteni.</p>
+        <div class="room-features">
+          <span class="feature">Două paturi single</span>
+          <span class="feature">Baie proprie</span>
+          <span class="feature">TV</span>
+        </div>
+        <a href="#contact" class="btn-primary" style="align-self:flex-start">Întreabă disponibilitatea</a>
+      </div>
+    </div>
+
+    <!-- Room 3 -->
+    <div class="room-row reveal">
+      <div class="room-img-wrap"><img src="images/zimmer-2-twin.jpg" alt="Apartament" class="room-img"/></div>
+      <div class="room-info">
+        <div class="room-number">03</div>
+        <div class="room-name">Apartament cu Bucătărie</div>
+        <div class="room-sub">Pat single · Bucătărie · Baie proprie</div>
+        <div class="room-price"><span class="room-price-ab">ab</span><span class="room-price-amount">220</span><span class="room-price-label">Lei / noapte</span></div>
+        <p class="room-desc">Unitate independentă cu bucătărie proprie — ideală pentru șederi mai lungi sau călători autonomi.</p>
+        <div class="room-features">
+          <span class="feature">Pat single</span>
+          <span class="feature">Bucătărie echipată</span>
+          <span class="feature">Frigider</span>
+          <span class="feature">Cafetieră</span>
+        </div>
+        <a href="#contact" class="btn-primary" style="align-self:flex-start">Întreabă disponibilitatea</a>
+      </div>
+    </div>
+
+    <!-- Room 4 -->
+    <div class="room-row reverse reveal">
+      <div class="room-img-wrap"><img src="images/zimmer-1-main.jpg" alt="Cameră Single" class="room-img"/></div>
+      <div class="room-info">
+        <div class="room-number">04</div>
+        <div class="room-name">Cameră Single</div>
+        <div class="room-sub">Pat single · Baie proprie</div>
+        <div class="room-price"><span class="room-price-ab">ab</span><span class="room-price-amount">120</span><span class="room-price-label">Lei / noapte</span></div>
+        <p class="room-desc">Compactă și liniștită — pentru un drum lung care merită o noapte bună de somn.</p>
+        <div class="room-features">
+          <span class="feature">Pat single</span>
+          <span class="feature">Baie proprie</span>
+          <span class="feature">AC</span>
+          <span class="feature">Ideal tranzit</span>
+        </div>
+        <a href="#contact" class="btn-primary" style="align-self:flex-start">Întreabă disponibilitatea</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-sep"></div>
+<!-- TERRACE & COURTYARD -->
+<section class="terrace-section" id="terasa">
+  <div class="container">
+    <div class="eyebrow reveal">Curte & Terasă</div>
+    <h2 class="reveal reveal-delay-1" style="color:#2B2118"><span style="font-weight:300">Spații exterioare</span><br/><em style="color:var(--gold);font-weight:400">pentru relaxare.</em></h2>
+    <p class="reveal reveal-delay-2" style="font-size:16px;line-height:1.75;color:rgba(43,33,24,.85);max-width:500px;margin-top:20px">Curtea interioară oferă un spațiu plăcut pentru relaxare, masă și socializare. Oaspeții se pot bucura de terasa acoperită, grădină și zonă de grătar.</p>
+    <div class="terrace-grid">
+      <div class="terrace-img-wrap reveal">
+        <img src="images/terasse-aussen.jpg" alt="Terasă acoperită Pensiunea Dulce Ambient Păuliș" class="terrace-img"/>
+        <div class="terrace-label">Terasă acoperită</div>
+      </div>
+      <div class="terrace-img-wrap reveal reveal-delay-1">
+        <img src="images/terasse-innen.jpg" alt="Terasă interior" class="terrace-img"/>
+        <div class="terrace-label">Terasă cu grădină</div>
+      </div>
+      <div class="terrace-img-wrap reveal reveal-delay-2">
+        <img src="images/innenhof-overview.jpg" alt="Innenhof" class="terrace-img"/>
+        <div class="terrace-label">Curte interioară</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- OUTDOOR KITCHEN - Fullscreen cinematic -->
+<section class="kitchen-section" style="min-height:85vh;display:flex;align-items:center">
+  <div class="kitchen-bg"><img src="images/outdoor-kitchen-1.jpg" alt="Bucătărie exterioară Pensiunea Dulce Ambient"/></div>
+  <div class="cta-overlay" style="background:linear-gradient(135deg,rgba(48,28,18,.88) 0%,rgba(48,28,18,.45) 100%)"></div>
+  <div class="container" style="position:relative;z-index:2;width:100%">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+
+      <!-- Left: Text -->
+      <div>
+        <div class="eyebrow kitchen-eyebrow reveal" style="color:rgba(250,246,239,.7)">Bucătărie exterioară</div>
+        <h2 class="reveal reveal-delay-1" style="color:var(--cream);font-size:clamp(36px,5vw,72px);margin-bottom:24px"><span style="font-weight:300">Cuptor de piatră,</span><br/><em style="color:var(--gold);font-weight:400">grătar și o masă lungă.</em></h2>
+        <p class="reveal reveal-delay-2" style="color:rgba(250,246,239,.88);font-size:16px;line-height:1.8;margin-bottom:32px">În spatele casei, sub un acoperiș rustic, un cuptor de piatră și un grătar mare vă așteaptă. Se pot organiza mese în familie cu produse proprii sau pregătite împreună cu noi.</p>
+        <ul class="kitchen-features reveal reveal-delay-3">
+          <li>Cuptor de piatră tradițional</li>
+          <li>Grătar mare — spațiu pentru familii</li>
+          <li>Masă comună din lemn</li>
+          <li>Bucătărie exterioară echipată</li>
+        </ul>
+      </div>
+
+      <!-- Right: 2 real kitchen photos -->
+      <div class="reveal reveal-delay-1" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80"
+             alt="Grătar carne Pensiunea Dulce Ambient"
+             style="width:100%;aspect-ratio:3/4;object-fit:cover;box-shadow:var(--shadow-xl)"/>
+        <img src="images/outdoor-kitchen-3.jpg"
+             alt="Masă exterior Pensiunea Dulce Ambient"
+             style="width:100%;aspect-ratio:3/4;object-fit:cover;box-shadow:var(--shadow-xl);margin-top:40px"/>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BREAKFAST - separate calm section -->
+<section class="breakfast-section" id="mic-dejun">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+      <div class="reveal">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+             alt="Mic dejun cafea Pensiunea Dulce Ambient"
+             style="width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow-lg)"/>
+      </div>
+      <div>
+        <div class="eyebrow reveal">Mic dejun</div>
+        <h2 class="reveal reveal-delay-1"><em style="color:var(--gold);font-weight:400">Mic dejun</em><br/><span style="font-weight:300">disponibil la cerere.</span></h2>
+        <div class="hairline"></div>
+        <p class="reveal reveal-delay-2" style="font-size:16px;line-height:1.8;color:#2B2118;margin-bottom:16px">Pregătim mic dejun simplu și consistent dacă ne anunțați la rezervare sau seara dinainte. Cafea proaspătă, ouă, brânză, legume și pâine de casă — atât cât trebuie pentru o dimineață bună înainte de drum.</p>
+        <p class="reveal reveal-delay-3" style="font-size:13px;font-style:italic;color:var(--stone)">* Se servește în sala de mese sau pe terasă, după vreme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- GALLERY -->
+<section class="gallery-section" id="galerie">
+  <div class="container">
+    <div class="eyebrow reveal">Galerie</div>
+    <h2 class="reveal reveal-delay-1"><span style="font-weight:300">Imagini din</span><br/><em style="color:var(--gold);font-weight:400">Dulce Ambient.</em></h2>
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">Toate</button>
+      <button class="filter-btn" data-filter="exterior">Exterior</button>
+      <button class="filter-btn" data-filter="camere">Camere</button>
+      <button class="filter-btn" data-filter="bai">Băi</button>
+      <button class="filter-btn" data-filter="terasa">Terasă</button>
+      <button class="filter-btn" data-filter="curte">Curte</button>
+      <button class="filter-btn" data-filter="bucatarie">Bucătărie</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-cat="exterior"><img src="images/exterior-gate-day.jpg" alt="Intrare Pensiunea Dulce Ambient Păuliș - poartă și grădină" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="exterior"><img src="images/exterior-front.jpg" alt="Pensiunea Dulce Ambient Păuliș Arad - fațadă zi" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="camere"><img src="images/zimmer-4-main.jpg" alt="Cameră dublă Pensiunea Dulce Ambient Păuliș Arad" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="camere"><img src="images/zimmer-3-main.jpg" alt="Cameră twin două paturi Pensiunea Dulce Ambient Păuliș" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="camere"><img src="images/zimmer-1-main.jpg" alt="Cameră single Pensiunea Dulce Ambient Păuliș Arad" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="camere"><img src="images/zimmer-2-twin.jpg" alt="Apartament" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="camere"><img src="images/zimmer-4-schrank.jpg" alt="Detaliu cameră" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="bai"><img src="images/bad-1.jpg" alt="Baie" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="bai"><img src="images/bad-gross.jpg" alt="Baie mare" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="bai"><img src="images/bad-1-dusche.jpg" alt="Duș" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="terasa"><img src="images/terasse-aussen.jpg" alt="Terasă" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="terasa"><img src="images/terasse-innen.jpg" alt="Terasă interior" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="curte"><img src="images/innenhof-overview.jpg" alt="Curte" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="curte"><img src="images/innenhof-kueche-area.jpg" alt="Curte bucătărie" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="curte"><img src="images/innenhof-treppe.jpg" alt="Trepte" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="bucatarie"><img src="images/outdoor-kitchen-1.jpg" alt="Cuptor de piatră bucătărie exterioară Pensiunea Dulce Ambient" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="bucatarie"><img src="images/outdoor-kitchen-2.jpg" alt="Grătar" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="bucatarie"><img src="images/outdoor-kitchen-3.jpg" alt="Masă exterior" loading="lazy"/></div>
+      <div class="gallery-item" data-cat="exterior"><img src="images/signage.jpg" alt="Indicatoare Pensiunea Dulce Ambient" loading="lazy" style="object-position:center center"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">×</button>
+  <img src="images/hero.jpg" alt="" id="lightboxImg" style="display:none"/>
+</div>
+<div class="section-sep"></div>
+<!-- LOCATION + ABOUT -->
+<section class="location-section" id="locatie">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;align-items:start">
+
+      <!-- Map -->
+      <div class="reveal">
+        <div class="eyebrow">Locație</div>
+        <h2 style="font-size:clamp(28px,3vw,48px);margin-bottom:24px"><span style="font-weight:300">Ușor de</span> <em style="color:var(--gold);font-weight:400">găsit.</em></h2>
+        <div style="width:100%;aspect-ratio:1/1;overflow:hidden;box-shadow:var(--shadow-lg)">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.5!2d21.7!3d46.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUMShdWxpyJk!5e0!3m2!1sro!2sro!4v1620000000000!5m2!1sro!2sro" allowfullscreen="" loading="lazy" style="width:100%;height:100%;border:none"></iframe>
+        </div>
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px">
+          <div class="location-detail"><span class="location-label">Adresă</span><span class="location-value">Str. Principală 69, Păuliș, Arad</span></div>
+          <div class="location-detail"><span class="location-label">Față de Arad</span><span class="location-value">~15 km · 20 min</span></div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
+          <a href="https://maps.google.com/?q=Paulis+Arad+Romania" target="_blank" class="btn-primary">Google Maps</a>
+          <a href="tel:0744593171" class="btn-ghost">Sună</a>
+        </div>
+      </div>
+
+      <!-- Photo -->
+      <div class="reveal reveal-delay-1">
+        <img src="images/adina-mircea.jpg" alt="Adina și Mircea Lazăr" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;box-shadow:var(--shadow-xl)"/>
+      </div>
+
+      <!-- About text -->
+      <div class="reveal reveal-delay-2" style="padding-top:60px">
+        <div class="eyebrow">Familia Lazăr</div>
+        <h2 style="font-size:clamp(28px,3vw,48px);margin-bottom:20px"><span style="font-weight:300">Adina &</span> <em style="color:var(--gold);font-weight:400">Mircea</em></h2>
+        <div class="hairline"></div>
+        <p class="about-text">"Pensiunea este locul nostru de suflet — un spațiu în care primim oaspeți ca pe membrii familiei."</p>
+        <p class="about-sub">Ospitalitate, grijă și respect — acestea sunt valorile după care ne ghidăm în fiecare zi în Păuliș, aproape de Arad.</p>
+        <div style="margin-top:28px;display:flex;gap:8px;flex-wrap:wrap">
+          <a href="tel:0744593171" class="btn-primary">📞 0744 593 171</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="container">
+    <div class="eyebrow reveal">Recenzii</div>
+    <h2 class="reveal reveal-delay-1"><span style="font-weight:300">Ce spun</span><br/><em style="color:var(--gold);font-weight:400">oaspeții noștri.</em></h2>
+    <div class="reviews-carousel reveal reveal-delay-2" style="margin-top:60px">
+
+      <div class="review-card" style="background:var(--cream);padding:32px;border-top:3px solid var(--gold);box-shadow:var(--shadow-md);transition:box-shadow .4s,transform .4s" onmouseenter="this.style.boxShadow='var(--shadow-xl)';this.style.transform='translateY(-6px)'" onmouseleave="this.style.boxShadow='var(--shadow-md)';this.style.transform=''">
+        <div style="display:flex;gap:4px;margin-bottom:16px">
+          <span style="color:var(--gold);font-size:18px">★★★★★</span>
+        </div>
+        <p style="font-family:'Fraunces',serif;font-style:italic;font-size:17px;line-height:1.7;margin-bottom:20px;color:var(--ink)">"Locație liniștită, cameră curată și gazdă primitoare. Am dormit excelent după un drum lung. Recomand!"</p>
+        <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone)">— Mihai D. · Booking.com</div>
+      </div>
+
+      <div class="review-card" style="background:var(--cream);padding:32px;border-top:3px solid var(--gold);box-shadow:var(--shadow-md);transition:box-shadow .4s,transform .4s" onmouseenter="this.style.boxShadow='var(--shadow-xl)';this.style.transform='translateY(-6px)'" onmouseleave="this.style.boxShadow='var(--shadow-md)';this.style.transform=''">
+        <div style="display:flex;gap:4px;margin-bottom:16px">
+          <span style="color:var(--gold);font-size:18px">★★★★★</span>
+        </div>
+        <p style="font-family:'Fraunces',serif;font-style:italic;font-size:17px;line-height:1.7;margin-bottom:20px;color:var(--ink)">"Curtea și bucătăria exterioară sunt superbe. Am petrecut o seară minunată la grătar cu familia. Vom reveni!"</p>
+        <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone)">— Ana M. · Google</div>
+      </div>
+
+      <div class="review-card" style="background:var(--cream);padding:32px;border-top:3px solid var(--gold);box-shadow:var(--shadow-md);transition:box-shadow .4s,transform .4s" onmouseenter="this.style.boxShadow='var(--shadow-xl)';this.style.transform='translateY(-6px)'" onmouseleave="this.style.boxShadow='var(--shadow-md)';this.style.transform=''">
+        <div style="display:flex;gap:4px;margin-bottom:16px">
+          <span style="color:var(--gold);font-size:18px">★★★★★</span>
+        </div>
+        <p style="font-family:'Fraunces',serif;font-style:italic;font-size:17px;line-height:1.7;margin-bottom:20px;color:var(--ink)">"Adina și Mircea sunt gazde excepționale. Mic dejunul a fost delicios, curtea impecabilă. Locul ideal lângă Arad."</p>
+        <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone)">— Cristina P. · Booking.com</div>
+      </div>
+
+    </div>
+    <p class="reveal" style="font-size:12px;color:var(--stone);font-style:italic;margin-top:24px;text-align:center">* Recenziile sunt exemple reprezentative. Citiți toate recenziile pe Booking.com.</p>
+  </div>
+</section>
+<div class="section-sep"></div>
+<!-- BOOKING -->
+<section class="booking-section" id="contact">
+  <div class="container">
+    <div class="booking-grid">
+      <div>
+        <div class="eyebrow reveal">Rezervări</div>
+        <h2 class="reveal reveal-delay-1"><span style="font-weight:300">Verifică</span><br/><em style="color:var(--gold);font-weight:400">disponibilitatea.</em></h2>
+        <div class="hairline"></div>
+        <p class="reveal reveal-delay-2" style="font-size:15px;line-height:1.75;color:rgba(43,33,24,.85);margin-bottom:24px">Pentru confirmare rapidă, ne puteți contacta direct telefonic sau pe WhatsApp.</p>
+        <p class="reveal reveal-delay-3" style="font-size:13px;color:var(--stone);font-style:italic">* Nu garantăm disponibilitate instantanee. Vom confirma în cel mai scurt timp.</p>
+        <div style="margin-top:20px;padding:16px;background:rgba(199,160,87,.1);border-left:3px solid var(--gold)">
+          <p style="font-size:13px;color:var(--wood);font-weight:500">🏷 Cel mai bun preț la rezervare directă</p>
+          <p style="font-size:12px;color:var(--stone);margin-top:4px">Rezervând direct economisiți față de platformele online. Fără comisioane.</p>
+        </div>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
+          <a href="tel:0744593171" class="btn-primary" style="text-align:center">📞 Sună acum — 0744 593 171</a>
+          <a href="https://wa.me/40744593171?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20rezervare%20la%20Pensiunea%20Dulce%20Ambient.%0A%0ANumele%20meu%3A%20%0AData%20sosirii%3A%20%0AData%20plec%C4%83rii%3A%20%0ANum%C4%83r%20persoane%3A%20%0ATip%20camer%C4%83%3A%20%28Dubl%C4%83%20/%20Twin%20/%20Single%20/%20Apartament%29%0ANum%C4%83r%20de%20telefon%3A%20%0A%0AMul%C8%9Bumesc%21" class="btn-wa" style="justify-content:center">WhatsApp rezervare</a>
+        </div>
+      </div>
+      <div>
+        <form class="booking-form" onsubmit="submitForm(event)">
+          <div class="form-field">
+            <label class="form-label">Data sosirii</label>
+            <input type="date" class="form-input" id="arrival"/>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Data plecării</label>
+            <input type="date" class="form-input" id="departure"/>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Număr persoane</label>
+            <select class="form-input" id="persons">
+              <option>1 persoană</option>
+              <option>2 persoane</option>
+              <option>3 persoane</option>
+              <option>4+ persoane</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Tip cameră</label>
+            <select class="form-input" id="roomType">
+              <option>Cameră dublă</option>
+              <option>Cameră twin</option>
+              <option>Apartament cu bucătărie</option>
+              <option>Cameră single</option>
+            </select>
+          </div>
+          <div class="form-field full">
+            <label class="form-label">Telefon</label>
+            <input type="tel" class="form-input" id="guestPhone" placeholder="0700 000 000"/>
+          </div>
+          <div class="form-field full">
+            <label class="form-label">Mesaj opțional</label>
+            <textarea class="form-input" id="message" rows="3" placeholder="Cerințe speciale..."></textarea>
+          </div>
+          <div class="booking-actions">
+            <button type="submit" class="btn-primary">Trimite cererea →</button>
+            <button type="button" class="btn-wa" onclick="sendWhatsApp()">Trimite pe WhatsApp</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="cta-bg"><img src="images/hero.jpg" alt="Pensiunea Dulce Ambient"/></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <h2 class="cta-title reveal"><span style="font-weight:300">Cazare în</span> <span style="font-weight:600">Păuliș,</span><br/><em style="color:var(--gold);font-weight:300">aproape de Arad.</em></h2>
+    <p class="cta-sub reveal reveal-delay-1" style="color:rgba(250,246,239,.95);text-shadow:0 1px 8px rgba(0,0,0,.2)">Familia Lazăr vă așteaptă.</p>
+    <div class="cta-btns reveal reveal-delay-2">
+      <a href="tel:0744593171" class="btn-primary">📞 0744 593 171</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Pensiunea Dulce Ambient</div>
+        <p class="footer-desc">O pensiune mică și familială în Păuliș, aproape de Arad. Administrată cu grijă de familia Lazăr.</p>
+      </div>
+      <div>
+        <div class="footer-title">Navigare</div>
+        <div class="footer-links">
+          <a href="#camere">Camere</a>
+          <a href="#terasa">Curte & Terasă</a>
+          <a href="#mic-dejun">Mic dejun</a>
+          <a href="#galerie">Galerie</a>
+          <a href="#locatie">Locație</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Contact</div>
+        <div class="footer-links">
+          <a href="tel:0744593171">0744 593 171</a>
+          <span style="color:rgba(250,246,239,.4);font-size:13px">Păuliș, Județul Arad</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Pensiunea Dulce Ambient · Familia Lazăr</span>
+      <span>Păuliș, Județul Arad, România</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/40744593171?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20rezervare%20la%20Pensiunea%20Dulce%20Ambient.%0A%0ANumele%20meu%3A%20%0AData%20sosirii%3A%20%0AData%20plec%C4%83rii%3A%20%0ANum%C4%83r%20persoane%3A%20%0ATip%20camer%C4%83%3A%20%28Dubl%C4%83%20/%20Twin%20/%20Single%20/%20Apartament%29%0ANum%C4%83r%20de%20telefon%3A%20%0A%0AMul%C8%9Bumesc%21"
+   id="wa-float"
+   target="_blank"
+   aria-label="Scrie pe WhatsApp"
+   style="position:fixed;bottom:32px;right:32px;z-index:999;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4),0 2px 8px rgba(0,0,0,.2);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s;animation:waPulse 2.5s ease-in-out infinite"
+   onmouseenter="this.style.transform='scale(1.12)'"
+   onmouseleave="this.style.transform=''"
+>
+  <svg viewBox="0 0 24 24" fill="white" style="width:32px;height:32px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<div id="wa-tooltip" style="position:fixed;bottom:42px;right:104px;z-index:998;background:var(--ink);color:var(--cream);padding:8px 16px;font-size:13px;font-family:'Manrope',sans-serif;letter-spacing:.04em;white-space:nowrap;opacity:0;transform:translateX(8px);transition:opacity .3s,transform .3s;pointer-events:none;border-radius:2px">Scrie-ne pe WhatsApp</div>
+
+<!-- MOBILE STICKY BAR -->
+<div class="mobile-bar">
+  <div class="mobile-bar-inner">
+    <a href="tel:0744593171">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.34 2.84 2 2 0 012.33 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006.18 6.18l1.27-.76a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      Sună
+    </a>
+    <a href="https://wa.me/40744593171?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20rezervare%20la%20Pensiunea%20Dulce%20Ambient.%0A%0ANumele%20meu%3A%20%0AData%20sosirii%3A%20%0AData%20plec%C4%83rii%3A%20%0ANum%C4%83r%20persoane%3A%20%0ATip%20camer%C4%83%3A%20%28Dubl%C4%83%20/%20Twin%20/%20Single%20/%20Apartament%29%0ANum%C4%83r%20de%20telefon%3A%20%0A%0AMul%C8%9Bumesc%21">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a href="#contact">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Rezervă
+    </a>
+  </div>
+</div>
+
+<script>
+// Card stack removed
+
+// PROGRESSIVE DISCLOSURE
+
+// 1. ROOM CARDS - tap to expand on mobile
+function initRoomCards(){
+  if(window.innerWidth > 768) return;
+  document.querySelectorAll('.room-row').forEach((row, i) => {
+    const info = row.querySelector('.room-info');
+    if(!info) return;
+
+    // Get room data
+    const name = info.querySelector('.room-name')?.textContent || '';
+    const sub = info.querySelector('.room-sub')?.textContent || '';
+    const img = row.querySelector('.room-img-wrap');
+
+    // Wrap collapsible content
+    const collapsible = document.createElement('div');
+    collapsible.className = 'room-info-collapsible';
+    const desc = info.querySelector('.room-desc');
+    const features = info.querySelector('.room-features');
+    const btn = info.querySelector('.btn-primary');
+    if(desc) collapsible.appendChild(desc.cloneNode(true));
+    if(features) collapsible.appendChild(features.cloneNode(true));
+    if(btn) collapsible.appendChild(btn.cloneNode(true));
+
+    // Create toggle button
+    const toggle = document.createElement('button');
+    toggle.className = 'room-toggle';
+    toggle.innerHTML = `
+      <div class="room-toggle-left">
+        <span class="room-toggle-sub">0${i+1}</span>
+        <span class="room-toggle-name">${name}</span>
+        <span class="room-toggle-sub">${sub}</span>
+      </div>
+      <div class="room-toggle-icon">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#2B2118" stroke-width="2">
+          <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
+        </svg>
+      </div>`;
+
+    toggle.addEventListener('click', () => {
+      const isOpen = row.classList.contains('expanded');
+      document.querySelectorAll('.room-row.expanded').forEach(r => r.classList.remove('expanded'));
+      if(!isOpen) row.classList.add('expanded');
+    });
+
+    // Rebuild info section
+    info.innerHTML = '';
+    info.appendChild(toggle);
+    info.appendChild(collapsible);
+    info.style.padding = '0';
+  });
+}
+
+// 2. GALLERY - show 6, load more
+function initGallery(){
+  if(window.innerWidth > 768) return;
+  const items = document.querySelectorAll('.gallery-item');
+  const grid = document.querySelector('.gallery-grid');
+  if(!grid || items.length <= 6) return;
+
+  items.forEach((item, i) => {
+    if(i >= 6) item.classList.add('gallery-hidden');
+  });
+
+  const btn = document.createElement('button');
+  btn.className = 'gallery-show-more';
+  btn.textContent = `+ Vezi toate fotografiile (${items.length})`;
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.gallery-hidden').forEach(el => {
+      el.classList.remove('gallery-hidden');
+      el.classList.add('gallery-shown');
+    });
+    btn.remove();
+  });
+  grid.appendChild(btn);
+}
+
+// 3. REVIEWS - swipeable dots
+function initReviews(){
+  if(window.innerWidth > 768) return;
+  const carousel = document.querySelector('.reviews-carousel');
+  if(!carousel) return;
+
+  const cards = carousel.querySelectorAll('.review-card');
+  const dotsContainer = document.createElement('div');
+  dotsContainer.className = 'reviews-dots';
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'reviews-dot' + (i===0?' active':'');
+    dotsContainer.appendChild(dot);
+  });
+  carousel.parentNode.insertBefore(dotsContainer, carousel.nextSibling);
+
+  carousel.addEventListener('scroll', () => {
+    const idx = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+    document.querySelectorAll('.reviews-dot').forEach((d,i) => {
+      d.classList.toggle('active', i===idx);
+    });
+  }, {passive:true});
+}
+
+// 4. BOOKING FORM - progressive reveal
+function initBookingForm(){
+  if(window.innerWidth > 768) return;
+  const form = document.querySelector('.booking-form');
+  if(!form) return;
+
+  const allFields = form.querySelectorAll('.form-field');
+  if(allFields.length < 3) return;
+
+  const extraDiv = document.createElement('div');
+  extraDiv.className = 'booking-form-extra';
+
+  // Move fields 3+ to extra div
+  Array.from(allFields).slice(2).forEach(f => extraDiv.appendChild(f));
+  // Move actions too
+  const actions = form.querySelector('.booking-actions');
+  if(actions) extraDiv.appendChild(actions);
+
+  const expandBtn = document.createElement('button');
+  expandBtn.type = 'button';
+  expandBtn.className = 'booking-expand-btn';
+  expandBtn.innerHTML = 'Completează detaliile <span style="font-size:16px">↓</span>';
+  expandBtn.addEventListener('click', () => {
+    extraDiv.classList.toggle('open');
+    expandBtn.classList.toggle('open');
+    expandBtn.innerHTML = extraDiv.classList.contains('open')
+      ? 'Ascunde <span style="font-size:16px">↑</span>'
+      : 'Completează detaliile <span style="font-size:16px">↓</span>';
+  });
+
+  form.appendChild(expandBtn);
+  form.appendChild(extraDiv);
+}
+
+// Init all on load
+window.addEventListener('load', () => {
+  initRoomCards();
+  initGallery();
+  initReviews();
+  initBookingForm();
+});
+
+// NAV SCROLL
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  const navCta = document.getElementById('nav-cta');
+  const isScrolled = window.scrollY > 60;
+  nav.classList.toggle('scrolled', isScrolled);
+  if(navCta) {
+    if(isScrolled) {
+      navCta.style.background = 'var(--ink)';
+      navCta.style.borderColor = 'var(--ink)';
+      navCta.style.color = 'var(--cream)';
+    } else {
+      navCta.style.background = 'rgba(250,246,239,.15)';
+      navCta.style.borderColor = 'rgba(250,246,239,.5)';
+      navCta.style.color = 'var(--cream)';
+    }
+  }
+});
+
+// REVEAL ANIMATIONS - progressive enhancement
+const reveals = document.querySelectorAll('.reveal');
+
+// Mark elements below fold for animation, leave above-fold visible
+function initReveals() {
+  reveals.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top > window.innerHeight) {
+      // Below fold - prepare for animation
+      el.classList.add('will-animate');
+    }
+    // Above fold stays visible (default state)
+  });
+}
+
+function checkReveals() {
+  reveals.forEach(el => {
+    if(!el.classList.contains('will-animate')) return;
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight * 0.92) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+// Init after DOM ready
+initReveals();
+window.addEventListener('scroll', checkReveals, {passive: true});
+setTimeout(checkReveals, 200);
+
+// GALLERY FILTER
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.dataset.hidden = filter !== 'all' && item.dataset.cat !== filter;
+    });
+  });
+});
+
+// LIGHTBOX
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+// Gallery + Room images clickable
+// All clickable images
+function openLightbox(src) {
+  lightboxImg.src = src;
+  lightboxImg.style.display = 'block';
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+const clickableImgs = document.querySelectorAll(
+  '.gallery-item img, .room-img-wrap img, .terrace-img, .kitchen-photo, .about-img, .story-img, .breakfast-img'
+);
+clickableImgs.forEach(img => {
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', () => openLightbox(img.src));
+});
+document.getElementById('lightboxClose').addEventListener('click', () => {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+});
+lightbox.addEventListener('click', e => {
+  if(e.target === lightbox) {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+
+// WHATSAPP FORM
+function sendWhatsApp() {
+  const arrival = document.getElementById('arrival').value || '—';
+  const departure = document.getElementById('departure').value || '—';
+  const persons = document.getElementById('persons').value;
+  const room = document.getElementById('roomType').value;
+  const phone = document.getElementById('guestPhone')?.value || '—';
+  const msg_extra = document.getElementById('message')?.value || '';
+  const msg = `Bună ziua! Aș dori să fac o rezervare la Pensiunea Dulce Ambient.\nNume: —\nTelefon: ${phone}\nData sosirii: ${arrival}\nData plecării: ${departure}\nNumăr persoane: ${persons}\nTip cameră: ${room}${msg_extra ? '\nMesaj: ' + msg_extra : ''}\nMulțumesc!`;
+  window.open(`https://wa.me/40744593171?text=${encodeURIComponent(msg)}`);
+}
+
+<!-- Tooltip -->
+<div style="
+  position:fixed;
+  bottom:42px;
+  right:104px;
+  z-index:998;
+  background:var(--ink);
+  color:var(--cream);
+  padding:8px 16px;
+  font-size:13px;
+  font-family:'Manrope',sans-serif;
+  letter-spacing:.04em;
+  white-space:nowrap;
+  opacity:0;
+  transform:translateX(8px);
+  transition:opacity .3s,transform .3s;
+  pointer-events:none;
+  border-radius:2px;
+" id="wa-tooltip-2">Scrie-ne pe WhatsApp</div>
+
+<style>
+@keyframes waPulse{
+  0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4),0 2px 8px rgba(0,0,0,.2)}
+  50%{box-shadow:0 4px 28px rgba(37,211,102,.7),0 2px 8px rgba(0,0,0,.2)}
+}
+@media(max-width:768px){
+  #wa-float{bottom:80px;right:20px;width:52px;height:52px}
+  #wa-tooltip{display:none}
+}
+
+/* ============================================
+   MOBILE - vollständig optimiert
+   ============================================ */
+@media(max-width:768px){
+
+  /* BASE */
+  html{font-size:15px}
+  body{padding-bottom:64px}
+  section{padding:56px 20px !important;position:relative}
+  .location-section{padding:56px 20px !important}
+  .reviews-section{padding:56px 20px !important}
+  .breakfast-section{padding:56px 20px !important}
+  .gallery-section{padding:56px 20px !important}
+  .terrace-section{padding:56px 20px !important}
+  .container{padding:0 !important}
+  h2{font-size:clamp(30px,9vw,48px) !important;line-height:1.05 !important}
+  .eyebrow{font-size:10px;margin-bottom:12px}
+  .hairline{margin:24px 0}
+
+  
+.hero-btn{
+  display:inline-block;
+  color:#ffffff;
+  border:1px solid rgba(255,255,255,.5);
+  padding:14px 36px;
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-family:'Manrope',sans-serif;
+  backdrop-filter:blur(8px);
+  background:rgba(255,255,255,.08);
+  transition:background .3s,border-color .3s;
+}
+.hero-btn:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.8)}
+/* NAV */
+  nav{padding:14px 20px}
+  .nav-sub{display:none}
+  .nav-links{display:none}
+  .nav-right .nav-phone{display:none}
+  .nav-right .btn-primary{display:none}
+
+  /* HERO - cinematic fullscreen */
+  .hero{height:100svh;min-height:600px}
+  .hero-content{padding:80px 20px 32px}
+  .hero-eyebrow{font-size:10px;margin-bottom:16px}
+  .hero-title{font-size:clamp(44px,13vw,68px) !important;line-height:.93 !important;margin-bottom:20px}
+  .hero-desc{font-size:14px;line-height:1.7;margin-bottom:28px;max-width:100%}
+  .hero-ctas .btn-primary{
+    display:block;width:100%;text-align:center;
+    padding:16px 24px;font-size:12px;letter-spacing:.14em
+  }
+  .hero-badges{gap:6px;margin-top:24px !important}
+  .badge{font-size:9px;padding:4px 10px;letter-spacing:.1em}
+  .hero-scroll{display:none}
+
+  /* MARQUEE */
+  .marquee-wrap{padding:14px 0}
+  .marquee-item{font-size:10px;letter-spacing:.2em;gap:20px;padding:0 10px}
+
+  /* STORY */
+  .story-grid{grid-template-columns:1fr !important;gap:32px}
+  .story-img{aspect-ratio:3/2 !important;width:100%}
+  .story-card{display:none}
+  .story-text{font-size:15px;line-height:1.75}
+  .value-tag{font-size:10px;padding:6px 12px}
+
+  /* ROOMS */
+  .rooms-header{
+    grid-template-columns:1fr !important;
+    gap:16px;margin-bottom:32px
+  }
+  .room-row,.room-row.reverse{
+    grid-template-columns:1fr !important;
+    direction:ltr !important;
+    margin-bottom:20px;
+    box-shadow:var(--shadow-md)
+  }
+  .room-row.reverse .room-img-wrap{order:-1}
+  .room-img-wrap{aspect-ratio:16/9 !important;overflow:hidden}
+  .room-img{width:100%;height:100%;object-fit:cover}
+  .room-info{padding:24px 20px !important}
+  .room-number{font-size:10px;margin-bottom:10px}
+  .room-name{font-size:24px !important;margin-bottom:4px}
+  .room-sub{font-size:12px;margin-bottom:16px}
+  .room-desc{font-size:14px;line-height:1.7;margin-bottom:20px}
+  .room-features{gap:6px;margin-bottom:20px}
+  .feature{font-size:10px;padding:4px 10px}
+  .room-info .btn-primary{width:100%;text-align:center}
+
+  /* TERRACE */
+  .terrace-grid{grid-template-columns:1fr !important;gap:12px}
+  .terrace-img-wrap{box-shadow:var(--shadow-sm)}
+  .terrace-img{aspect-ratio:4/3 !important}
+  .terrace-label{font-size:10px}
+
+  /* KITCHEN */
+  .kitchen-section{padding:72px 20px !important;min-height:auto !important}
+  .kitchen-section .container > div{grid-template-columns:1fr !important;gap:36px}
+  .kitchen-title{font-size:clamp(28px,9vw,44px) !important}
+  .kitchen-desc{font-size:14px;line-height:1.75}
+  .kitchen-features{gap:12px}
+  .kitchen-features li{font-size:13px}
+  .kitchen-photos{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:8px;margin-top:0
+  }
+  .kitchen-photo{aspect-ratio:1/1 !important;margin-top:0 !important}
+  .kitchen-photo.wide{display:none}
+
+  /* BREAKFAST */
+  .breakfast-section > .container > div{
+    grid-template-columns:1fr !important;gap:28px
+  }
+  .breakfast-img{aspect-ratio:4/3 !important;width:100%}
+
+  /* GALLERY */
+  .gallery-section{padding:56px 20px !important}
+  .gallery-filters{gap:6px;margin:24px 0}
+  .filter-btn{padding:6px 14px;font-size:10px;letter-spacing:.08em}
+  .gallery-grid{
+    grid-template-columns:1fr 1fr !important;
+    gap:3px
+  }
+  .gallery-item img{aspect-ratio:1/1 !important}
+
+  /* LOCATION + ABOUT */
+  .location-section > .container > div{
+    grid-template-columns:1fr !important;
+    gap:24px
+  }
+  .location-section .map-placeholder,
+  .location-section .map-placeholder iframe{
+    width:100% !important;
+    aspect-ratio:16/9 !important;
+    height:auto !important;
+  }
+  .location-section > .container > div > div:nth-child(2){display:none !important}
+  .location-section > .container > div > div:nth-child(3){
+    padding-top:0 !important;
+    grid-column:1 !important;
+  }
+  .location-section h2{font-size:clamp(28px,8vw,44px) !important}
+  .location-section .btn-primary,
+  .location-section .btn-ghost{
+    width:100%;
+    text-align:center;
+    padding:14px 20px;
+    font-size:12px;
+    justify-content:center;
+  }
+  .location-section > .container > div > div:first-child{
+    grid-column:1 !important;
+  }
+
+  /* REVIEWS */
+  .reviews-section > .container > div{
+    grid-template-columns:1fr !important;gap:16px
+  }
+
+  /* BOOKING */
+  .booking-grid{grid-template-columns:1fr !important;gap:36px}
+  .booking-form{grid-template-columns:1fr !important}
+  .form-input{padding:14px 16px;font-size:16px}
+  .booking-actions{flex-direction:column;gap:10px}
+  .booking-actions button{width:100%;text-align:center;justify-content:center;padding:14px}
+
+  /* FINAL CTA */
+  .cta-section{padding:80px 20px}
+  .cta-title{font-size:clamp(28px,9vw,48px)}
+  .cta-sub{font-size:14px}
+  .cta-btns{flex-direction:column;align-items:stretch;gap:10px;max-width:320px;margin:0 auto}
+  .cta-btns a{text-align:center;justify-content:center;padding:14px 20px}
+
+  /* FOOTER */
+  footer{padding:48px 20px 24px}
+  .footer-grid{grid-template-columns:1fr !important;gap:28px}
+  .footer-brand{font-size:18px}
+  .footer-desc{font-size:13px}
+  .footer-bottom{flex-direction:column;gap:6px;text-align:center;font-size:11px}
+
+  /* FLOATING WA */
+  #wa-float{bottom:76px !important;right:16px !important;width:50px !important;height:50px !important}
+  #wa-float svg{width:26px !important;height:26px !important}
+  #wa-tooltip{display:none !important}
+
+  /* MOBILE BAR */
+  .mobile-bar-inner a{font-size:9px;padding:10px 6px;gap:3px}
+  .mobile-bar svg{width:18px;height:18px}
+}
+
+@media(max-width:400px){
+  .hero-title{font-size:clamp(36px,12vw,56px) !important}
+  section{padding:48px 16px !important}
+  .room-info{padding:20px 16px !important}
+  footer{padding:40px 16px 20px}
+  .gallery-grid{grid-template-columns:1fr !important}
+  .gallery-item img{aspect-ratio:16/9 !important}
+}
+  .hero-content{padding:90px 16px 36px}
+  section{padding:48px 16px !important}
+  .room-info{padding:20px 16px !important}
+  footer{padding:40px 16px 20px}
+}
+
+/* ============================================
+   MOBILE TEXT/BG/IMAGE FIXES
+   ============================================ */
+@media(max-width:768px){
+
+  /* HERO - stärkeres Overlay damit Text immer lesbar */
+  .hero-overlay{
+    background:linear-gradient(
+      180deg,
+      rgba(48,28,18,.15) 0%,
+      rgba(48,28,18,.35) 40%,
+      rgba(48,28,18,.82) 100%
+    ) !important;
+  }
+  .hero-img{
+    object-position:center center;
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+  }
+  .hero-title{
+    text-shadow:0 2px 20px rgba(0,0,0,.3);
+  }
+  .hero-desc{
+    text-shadow:0 1px 8px rgba(0,0,0,.2);
+  }
+
+  /* KITCHEN SECTION - text immer lesbar auf dunklem Bild */
+  .kitchen-section{
+    background:linear-gradient(135deg,#1a0e08 0%,#301C12 100%) !important;
+  }
+  .kitchen-bg{
+    opacity:.35 !important;
+  }
+  .kitchen-section .container{
+    position:relative;
+    z-index:2;
+  }
+
+  /* FINAL CTA - stärkeres Overlay */
+  .cta-overlay{
+    background:linear-gradient(
+      180deg,
+      rgba(48,28,18,.6) 0%,
+      rgba(48,28,18,.85) 100%
+    ) !important;
+  }
+
+  /* BILDER - immer richtig zentriert */
+  .hero-img{
+    object-fit:cover;
+    object-position:center 30%;
+    width:100%;
+    height:100%;
+  }
+  .room-img{
+    object-fit:cover;
+    object-position:center center;
+    width:100%;
+    height:100%;
+  }
+  .story-img{
+    object-fit:cover;
+    object-position:center 20%;
+  }
+  .about-img{
+    object-fit:cover;
+    object-position:center top;
+    max-height:400px;
+  }
+  .breakfast-img{
+    object-fit:cover;
+    object-position:center center;
+  }
+  .terrace-img{
+    object-fit:cover;
+    object-position:center center;
+  }
+
+  /* SCHRIFT - bessere Lesbarkeit auf allen Hintergründen */
+  /* Dunkle Sektionen */
+  .kitchen-section p,
+  .kitchen-section li,
+  .kitchen-section h2{
+    color:rgba(250,246,239,.96) !important;
+  }
+  .cta-content p,
+  .cta-content h2{
+    text-shadow:0 1px 12px rgba(0,0,0,.3);
+  }
+
+  /* Helle Sektionen */
+  .rooms-section p,
+  .rooms-section h2,
+  .rooms-section span{
+    color:#2B2118 !important;
+  }
+  section[style*="background:var(--cream)"] p,
+  section[style*="background:var(--cream)"] h2,
+  section[style*="background:var(--sand)"] p,
+  section[style*="background:var(--sand)"] h2{
+    color:#2B2118 !important;
+  }
+  .breakfast-section p,
+  .breakfast-section h2{
+    color:#2B2118 !important;
+  }
+
+  /* Story text */
+  .story-text{color:#2B2118 !important}
+  .about-text{color:#2B2118 !important}
+  .about-sub{color:#2B2118 !important}
+
+  /* GALERIE - bilder zentriert */
+  .gallery-item img{
+    object-fit:cover;
+    object-position:center center;
+  }
+
+  /* KITCHEN FOTOS - zentriert */
+  .kitchen-photo{
+    object-fit:cover;
+    object-position:center center;
+  }
+
+  /* MARQUEE - gut lesbar */
+  .marquee-wrap{
+    background:var(--ink) !important;
+  }
+  .marquee-item{
+    color:var(--cream) !important;
+  }
+
+  /* SECTION BACKGROUNDS - sauber */
+  .rooms-section{background:var(--sand) !important}
+  .breakfast-section{background:var(--cream) !important}
+
+  /* ROOM INFO auf Mobile - weißer Hintergrund, dunkler Text */
+  .room-toggle{background:var(--cream) !important;color:#2B2118 !important}
+  .room-toggle-name{color:#2B2118 !important}
+  .room-toggle-sub{color:#8C867A !important}
+
+  /* BOOKING - form labels lesbar */
+  .form-label{color:#2B2118 !important}
+  .form-input{color:#2B2118 !important;background:var(--cream) !important}
+
+  /* FOOTER - text lesbar */
+  .footer-brand,.footer-desc,.footer-title,.footer-links a{
+    color:rgba(250,246,239,.9) !important;
+  }
+}
+
+/* REVIEWS CAROUSEL - mobile swipeable */
+@media(max-width:768px){
+  .reviews-carousel{
+    display:flex !important;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    gap:16px;
+    padding-bottom:16px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    margin-left:-20px;
+    margin-right:-20px;
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .reviews-carousel::-webkit-scrollbar{display:none}
+  .review-card{
+    min-width:85vw;
+    scroll-snap-align:start;
+    flex-shrink:0;
+  }
+  .reviews-dots{
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    margin-top:16px;
+  }
+  .reviews-dot{
+    width:6px;height:6px;
+    border-radius:50%;
+    background:rgba(43,33,24,.2);
+    transition:background .3s;
+  }
+  .reviews-dot.active{background:var(--gold)}
+}
+@media(min-width:769px){
+  .reviews-carousel{display:grid !important;grid-template-columns:repeat(3,1fr);gap:24px}
+  .review-card{min-width:auto}
+  .reviews-dots{display:none}
+}
+
+/* ============================================
+   TYPOGRAPHY DEPTH SYSTEM
+   ============================================ */
+
+/* LIGHT SECTIONS - emboss effect, paper-like depth */
+.rooms-section h2, .gallery-section h2,
+.booking-section h2, .terrace-section h2,
+.breakfast-section h2, .location-section h2,
+.reviews-section h2{
+  text-shadow:0 1px 0 rgba(255,255,255,.9), 0 2px 10px rgba(43,33,24,.06);
+}
+
+/* DARK SECTIONS - drop shadow for legibility */
+.kitchen-section h2{
+  text-shadow:0 2px 24px rgba(0,0,0,.35), 0 1px 2px rgba(0,0,0,.2) !important;
+  color:var(--cream) !important;
+}
+.cta-section h2{
+  text-shadow:0 2px 28px rgba(0,0,0,.45), 0 1px 3px rgba(0,0,0,.25) !important;
+}
+
+/* BODY TEXT - subtle depth on light bg */
+p, .room-desc, .story-text, .about-text{
+  text-shadow:0 1px 0 rgba(255,255,255,.5);
+}
+
+/* EYEBROW - airiness */
+.eyebrow{letter-spacing:.32em !important; font-size:10px !important}
+
+/* ROOM NAMES - elegant depth */
+.room-name{text-shadow:0 1px 0 rgba(255,255,255,.8), 0 2px 6px rgba(43,33,24,.06)}
+
+/* PRICES - editorial mix */
+.room-price-amount{text-shadow:none}
+.room-price-ab{text-shadow:none}
+
+/* FOOTER */
+footer .footer-brand{text-shadow:0 1px 3px rgba(0,0,0,.2)}
+
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+#lightbox.open{opacity:1;pointer-events:all}
+#lightboxImg{max-width:90vw;max-height:90vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+#lightboxClose{position:fixed;top:24px;right:28px;color:#fff;font-size:32px;cursor:pointer;line-height:1;opacity:.7;transition:opacity .2s}
+#lightboxClose:hover{opacity:1}
+</style>
+
+<script>
+const waFloat = document.getElementById('wa-float');
+const waTooltip = document.getElementById('wa-tooltip');
+if(waFloat && waTooltip){
+  waFloat.addEventListener('mouseenter', () => {
+    waTooltip.style.opacity = '1';
+    waTooltip.style.transform = 'translateX(0)';
+  });
+  waFloat.addEventListener('mouseleave', () => {
+    waTooltip.style.opacity = '0';
+    waTooltip.style.transform = 'translateX(8px)';
+  });
+}
+</script>
+
+</body>
+</html>
