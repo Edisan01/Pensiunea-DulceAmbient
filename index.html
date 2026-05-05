@@ -833,7 +833,7 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
         </div>
       </div>
       <div>
-        <form class="booking-form" onsubmit="submitForm(event)">
+        <form class="booking-form" onsubmit="event.preventDefault(); sendWhatsApp()">
           <div class="form-field">
             <label class="form-label">Data sosirii</label>
             <input type="date" class="form-input" id="arrival"/>
@@ -1204,6 +1204,7 @@ function sendWhatsApp() {
   const msg = `Bună ziua! Aș dori să fac o rezervare la Pensiunea Dulce Ambient.\nNume: —\nTelefon: ${phone}\nData sosirii: ${arrival}\nData plecării: ${departure}\nNumăr persoane: ${persons}\nTip cameră: ${room}${msg_extra ? '\nMesaj: ' + msg_extra : ''}\nMulțumesc!`;
   window.open(`https://wa.me/40744593171?text=${encodeURIComponent(msg)}`);
 }
+</script>
 
 <!-- Tooltip -->
 <div style="
@@ -1224,6 +1225,7 @@ function sendWhatsApp() {
   pointer-events:none;
   border-radius:2px;
 " id="wa-tooltip-2">Scrie-ne pe WhatsApp</div>
+
 
 <style>
 @keyframes waPulse{
