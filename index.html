@@ -542,18 +542,18 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
     <div class="rooms-list" id="roomsList">
     <!-- Room 1 -->
     <div class="room-row reveal">
-      <div class="room-img-wrap"><img src="zimmer-4-main.jpg" alt="Cameră Dublă" class="room-img"/></div>
+      <div class="room-img-wrap"><img src="zimmer-1-main.jpg" alt="Cameră Single" class="room-img"/></div>
       <div class="room-info">
         <div class="room-number">01</div>
-        <div class="room-name">Cameră Dublă</div>
-        <div class="room-sub">Pat matrimonial · Baie proprie</div>
-        <div class="room-price"><span class="room-price-ab">ab</span><span class="room-price-amount">180</span><span class="room-price-label">Lei / noapte</span></div>
-        <p class="room-desc">Cameră liniștită cu pat dublu, ideală pentru cupluri sau călători care preferă spațiu suplimentar.</p>
+        <div class="room-name">Cameră Single</div>
+        <div class="room-sub">Pat single · Baie proprie</div>
+        <div class="room-price"><span class="room-price-ab">ab</span><span class="room-price-amount">120</span><span class="room-price-label">Lei / noapte</span></div>
+        <p class="room-desc">Compactă și liniștită — pentru un drum lung care merită o noapte bună de somn.</p>
         <div class="room-features">
-          <span class="feature">Pat matrimonial</span>
+          <span class="feature">Pat single</span>
           <span class="feature">Baie proprie</span>
           <span class="feature">AC</span>
-          <span class="feature">Lenjerie curată</span>
+          <span class="feature">Ideal tranzit</span>
         </div>
         <a href="#contact" class="btn-primary" style="align-self:flex-start">Întreabă disponibilitatea</a>
       </div>
@@ -579,9 +579,28 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
 
     <!-- Room 3 -->
     <div class="room-row reveal">
-      <div class="room-img-wrap"><img src="zimmer-2-twin.jpg" alt="Apartament" class="room-img"/></div>
+      <div class="room-img-wrap"><img src="zimmer-4-main.jpg" alt="Cameră Dublă" class="room-img"/></div>
       <div class="room-info">
         <div class="room-number">03</div>
+        <div class="room-name">Cameră Dublă</div>
+        <div class="room-sub">Pat matrimonial · Baie proprie</div>
+        <div class="room-price"><span class="room-price-ab">ab</span><span class="room-price-amount">180</span><span class="room-price-label">Lei / noapte</span></div>
+        <p class="room-desc">Cameră liniștită cu pat dublu, ideală pentru cupluri sau călători care preferă spațiu suplimentar.</p>
+        <div class="room-features">
+          <span class="feature">Pat matrimonial</span>
+          <span class="feature">Baie proprie</span>
+          <span class="feature">AC</span>
+          <span class="feature">Lenjerie curată</span>
+        </div>
+        <a href="#contact" class="btn-primary" style="align-self:flex-start">Întreabă disponibilitatea</a>
+      </div>
+    </div>
+
+    <!-- Room 4 -->
+    <div class="room-row reverse reveal">
+      <div class="room-img-wrap"><img src="zimmer-2-twin.jpg" alt="Apartament" class="room-img"/></div>
+      <div class="room-info">
+        <div class="room-number">04</div>
         <div class="room-name">Apartament cu Bucătărie</div>
         <div class="room-sub">Pat single · Bucătărie · Baie proprie</div>
         <div class="room-price"><span class="room-price-ab">ab</span><span class="room-price-amount">220</span><span class="room-price-label">Lei / noapte</span></div>
@@ -591,25 +610,6 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
           <span class="feature">Bucătărie echipată</span>
           <span class="feature">Frigider</span>
           <span class="feature">Cafetieră</span>
-        </div>
-        <a href="#contact" class="btn-primary" style="align-self:flex-start">Întreabă disponibilitatea</a>
-      </div>
-    </div>
-
-    <!-- Room 4 -->
-    <div class="room-row reverse reveal">
-      <div class="room-img-wrap"><img src="zimmer-1-main.jpg" alt="Cameră Single" class="room-img"/></div>
-      <div class="room-info">
-        <div class="room-number">04</div>
-        <div class="room-name">Cameră Single</div>
-        <div class="room-sub">Pat single · Baie proprie</div>
-        <div class="room-price"><span class="room-price-ab">ab</span><span class="room-price-amount">120</span><span class="room-price-label">Lei / noapte</span></div>
-        <p class="room-desc">Compactă și liniștită — pentru un drum lung care merită o noapte bună de somn.</p>
-        <div class="room-features">
-          <span class="feature">Pat single</span>
-          <span class="feature">Baie proprie</span>
-          <span class="feature">AC</span>
-          <span class="feature">Ideal tranzit</span>
         </div>
         <a href="#contact" class="btn-primary" style="align-self:flex-start">Întreabă disponibilitatea</a>
       </div>
@@ -957,6 +957,29 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
 
 // 2. GALLERY - show 6, load more
 function initGallery(){
+  // Desktop: show only first 12, rest hidden
+  if(window.innerWidth > 768) {
+    const grid = document.querySelector('.gallery-grid');
+    const items = document.querySelectorAll('.gallery-item');
+    if(items.length > 12) {
+      items.forEach((item, i) => {
+        if(i >= 12) item.classList.add('gallery-hidden-desktop');
+      });
+      const btn = document.createElement('button');
+      btn.className = 'gallery-show-more-desktop';
+      const hidden = items.length - 12;
+      btn.textContent = `+ Arată toate fotografiile (${hidden} mai multe)`;
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.gallery-hidden-desktop').forEach(el => {
+          el.classList.remove('gallery-hidden-desktop');
+          el.classList.add('gallery-shown-desktop');
+        });
+        btn.remove();
+      });
+      grid.appendChild(btn);
+    }
+  }
+
   if(window.innerWidth > 768) return;
   const items = document.querySelectorAll('.gallery-item');
   const grid = document.querySelector('.gallery-grid');
