@@ -1800,16 +1800,21 @@ if(waFloat && waTooltip){
   <span id="audioLabel">Sunete naturale</span>
 </button>
 
-<audio id="ambientAudio" loop preload="none">
-  <source src="https://cdn.freesound.org/previews/219/219828_3769224-lq.mp3" type="audio/mpeg">
-  <source src="https://www.soundjay.com/nature/sounds/birds-singing-1.mp3" type="audio/mpeg">
-</audio>
+<audio id="ambientAudio" loop preload="auto"><source src="bird.mp3" type="audio/mpeg"></audio>
 
 <style>
 #audioToggle:hover{background:rgba(43,33,24,.95);border-color:rgba(250,246,239,.5)}
 #audioToggle.playing{background:rgba(199,160,87,.85);border-color:rgba(199,160,87,.9)}
 @media(max-width:768px){
-  #audioToggle{bottom:76px;left:16px;padding:8px 12px;font-size:10px}
+  #audioToggle{
+    bottom:76px;
+    left:50%;
+    transform:translateX(-50%);
+    padding:7px 14px;
+    font-size:10px;
+    opacity:.7;
+  }
+  #audioToggle.playing{opacity:1}
 }
 </style>
 
