@@ -363,7 +363,7 @@ h2 em{font-style:italic}
 
 /* BOOKING */
 .booking-section{background:var(--sand);padding:80px 40px}
-.booking-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px}
+.booking-grid{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:center}
 .booking-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-field{display:flex;flex-direction:column;gap:6px}
 .form-field.full{grid-column:1/-1}
@@ -511,35 +511,6 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
     <span class="marquee-item">Aproape de Arad<span class="marquee-dot"></span></span>
   </div>
 </div>
-<div class="section-sep"></div>
-<!-- STORY -->
-<section style="background:var(--cream)">
-  <div class="container">
-    <div class="story-grid">
-      <div class="story-img-wrap reveal">
-        <img src="exterior-front.jpg" alt="Casa pensiunii" class="story-img"/>
-        <div class="story-card">
-          <div class="story-card-label">Familia Lazăr</div>
-          <div class="story-card-text">Adina & Mircea vă așteaptă</div>
-        </div>
-      </div>
-      <div>
-        <div class="eyebrow reveal">Despre noi</div>
-        <h2 class="reveal reveal-delay-1"><span style="font-weight:300">O pensiune</span> <em style="color:var(--gold);font-weight:400">mică</em><br/><span style="font-weight:300">și familială în Păuliș</span></h2>
-        <div class="hairline"></div>
-        <p class="story-text reveal reveal-delay-2 drop-cap">La Pensiunea Dulce Ambient, oaspeții sunt primiți într-un loc simplu, curat și liniștit, administrat cu grijă de familia Lazăr. Situată în Păuliș, aproape de Arad, pensiunea este o alegere practică pentru cei aflați în tranzit sau pentru cei care caută o cazare relaxată.</p>
-        <p class="story-text reveal reveal-delay-2">Cu mic dejun la cerere, terasă acoperită, curte interioară și bucătărie exterioară cu cuptor de piatră — tot ce ai nevoie pentru o noapte bună sau câteva zile de odihnă.</p>
-        <div class="story-values reveal reveal-delay-3">
-          <span class="value-tag">Ospitalitate</span>
-          <span class="value-tag">Grijă</span>
-          <span class="value-tag">Familie</span>
-          <span class="value-tag">Respect</span>
-          <span class="value-tag">Liniște</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <!-- ROOMS -->
 <section class="rooms-section" id="camere">
   <div class="container">
@@ -674,7 +645,7 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
       </div>
 
       <!-- Right: 2 real kitchen photos -->
-      <div class="reveal reveal-delay-1" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="reveal reveal-delay-1 kitchen-photos-inline" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
         <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80"
              alt="Grătar carne Pensiunea Dulce Ambient"
              style="width:100%;aspect-ratio:3/4;object-fit:cover;box-shadow:var(--shadow-xl)"/>
@@ -749,7 +720,7 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
   <button class="lightbox-close" id="lightboxClose">×</button>
   <img src="hero.jpg" alt="" id="lightboxImg" style="display:none"/>
 </div>
-<div class="section-sep"></div>
+<div class="section-sep"></div><div class="section-sep"></div>
 <!-- LOCATION -->
 <section class="location-section" id="locatie">
   <div class="container">
@@ -1369,6 +1340,8 @@ function sendWhatsApp() {
   /* KITCHEN */
   .kitchen-section{padding:72px 20px !important;min-height:auto !important}
   .kitchen-section .container > div{grid-template-columns:1fr !important;gap:36px}
+  .kitchen-photos-inline{grid-template-columns:1fr 1fr !important;gap:8px !important}
+  .kitchen-photos-inline img{margin-top:0 !important}
   .kitchen-title{font-size:clamp(28px,9vw,44px) !important}
   .kitchen-desc{font-size:14px;line-height:1.75}
   .kitchen-features{gap:12px}
