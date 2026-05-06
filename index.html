@@ -745,41 +745,55 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
   <img src="hero.jpg" alt="" id="lightboxImg" style="display:none"/>
 </div>
 <div class="section-sep"></div>
-<!-- LOCATION + ABOUT -->
+<!-- LOCATION -->
 <section class="location-section" id="locatie">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;align-items:start">
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
 
-      <!-- Map -->
+      <!-- Left: title + address + buttons -->
       <div class="reveal">
         <div class="eyebrow">Locație</div>
-        <h2 style="font-size:clamp(28px,3vw,48px);margin-bottom:24px"><span style="font-weight:300">Ușor de</span> <em style="color:var(--gold);font-weight:400">găsit.</em></h2>
-        <div style="width:100%;aspect-ratio:1/1;overflow:hidden;box-shadow:var(--shadow-lg)">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.5!2d21.7!3d46.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUMShdWxpyJk!5e0!3m2!1sro!2sro!4v1620000000000!5m2!1sro!2sro" allowfullscreen="" loading="lazy" style="width:100%;height:100%;border:none"></iframe>
+        <h2 style="font-size:clamp(28px,3vw,52px);margin-bottom:24px"><span style="font-weight:300">Ușor de</span> <em style="color:var(--gold);font-weight:400">găsit.</em></h2>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px">
+          <div><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)">Adresă</span><br/><span style="font-size:15px;color:var(--ink)">Str. Principală 69, Păuliș, Arad</span></div>
+          <div><span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)">Față de Arad</span><br/><span style="font-size:15px;color:var(--ink)">~15 km · 20 min</span></div>
         </div>
-        <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px">
-          <div class="location-detail"><span class="location-label">Adresă</span><span class="location-value">Str. Principală 69, Păuliș, Arad</span></div>
-          <div class="location-detail"><span class="location-label">Față de Arad</span><span class="location-value">~15 km · 20 min</span></div>
-        </div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
-          <a href="https://maps.google.com/?q=Paulis+Arad+Romania" target="_blank" class="btn-primary">Google Maps</a>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <a href="https://maps.google.com/?q=Str.+Principala+69+Paulis+Arad+Romania" target="_blank" class="btn-primary">Google Maps</a>
           <a href="tel:0744593171" class="btn-ghost">Sună</a>
         </div>
       </div>
 
-      <!-- Photo -->
-      <div class="reveal reveal-delay-1">
-        <img src="adina-mircea.jpg" alt="Adina și Mircea Lazăr" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;box-shadow:var(--shadow-xl)"/>
+      <!-- Right: full map -->
+      <div class="reveal reveal-delay-1" style="overflow:hidden;box-shadow:var(--shadow-lg)">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.5!2d21.7!3d46.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUMShdWxpyJk!5e0!3m2!1sro!2sro!4v1620000000000!5m2!1sro!2sro"
+          allowfullscreen="" loading="lazy"
+          style="width:100%;height:360px;border:none;display:block"></iframe>
       </div>
 
-      <!-- About text -->
-      <div class="reveal reveal-delay-2" style="padding-top:60px">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT - Familia Lazăr -->
+<section class="about-familia-section" style="background:var(--cream)">
+  <div class="container">
+    <div class="about-familia-grid">
+
+      <!-- Photo -->
+      <div class="reveal">
+        <img src="adina-mircea.jpg" alt="Adina și Mircea Lazăr"
+          style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center top;box-shadow:var(--shadow-xl)"/>
+      </div>
+
+      <!-- Text -->
+      <div class="reveal reveal-delay-1">
         <div class="eyebrow">Familia Lazăr</div>
-        <h2 style="font-size:clamp(28px,3vw,48px);margin-bottom:20px"><span style="font-weight:300">Adina &</span> <em style="color:var(--gold);font-weight:400">Mircea</em></h2>
+        <h2 style="font-size:clamp(28px,3vw,52px);margin-bottom:20px"><span style="font-weight:300">Adina &</span> <em style="color:var(--gold);font-weight:400">Mircea</em></h2>
         <div class="hairline"></div>
-        <p class="about-text">"Pensiunea este locul nostru de suflet — un spațiu în care primim oaspeți ca pe membrii familiei."</p>
-        <p class="about-sub">Ospitalitate, grijă și respect — acestea sunt valorile după care ne ghidăm în fiecare zi în Păuliș, aproape de Arad.</p>
-        <div style="margin-top:28px;display:flex;gap:8px;flex-wrap:wrap">
+        <p class="about-text" style="font-family:'Fraunces',serif;font-style:italic;font-size:18px;line-height:1.7;margin-bottom:16px;color:var(--ink)">"Pensiunea este locul nostru de suflet — un spațiu în care primim oaspeți ca pe membrii familiei."</p>
+        <p class="about-sub" style="font-size:15px;line-height:1.75;color:var(--stone)">Ospitalitate, grijă și respect — acestea sunt valorile după care ne ghidăm în fiecare zi în Păuliș, aproape de Arad.</p>
+        <div style="margin-top:28px">
           <a href="tel:0744593171" class="btn-primary">📞 0744 593 171</a>
         </div>
       </div>
@@ -1883,6 +1897,81 @@ if(waFloat && waTooltip){
     font-size:10px;
   }
   #audioToggle::after{display:none}
+}
+
+/* LOCATION + ABOUT MOBILE FIXES */
+@media(max-width:768px){
+  /* Location section */
+  .location-section > .container > div{
+    grid-template-columns:1fr !important;
+    gap:24px !important;
+  }
+  .location-section iframe{
+    height:220px !important;
+  }
+
+  /* About Familia */
+  .about-familia-section{padding:56px 20px !important}
+  .about-familia-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:32px !important;
+  }
+  .about-familia-grid img{
+    aspect-ratio:3/2 !important;
+    width:100% !important;
+  }
+  .about-familia-section h2{font-size:clamp(28px,8vw,44px) !important}
+  .about-familia-section .btn-primary{width:100%;text-align:center}
+}
+
+/* Desktop */
+@media(min-width:769px){
+  .about-familia-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+  }
+}
+
+/* BOOKING FORM PROGRESSIVE REVEAL - MOBILE */
+@media(max-width:768px){
+  .booking-form-extra{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s cubic-bezier(.22,1,.36,1);
+  }
+  .booking-form-extra.open{
+    max-height:800px;
+  }
+  .booking-expand-btn{
+    width:100%;
+    background:transparent;
+    border:1.5px solid rgba(43,33,24,.2);
+    padding:13px;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    cursor:pointer;
+    font-family:'Manrope',sans-serif;
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-top:12px;
+    transition:background .2s,color .2s,border-color .2s;
+  }
+  .booking-expand-btn.open{
+    background:var(--ink);
+    color:var(--cream);
+    border-color:var(--ink);
+  }
+}
+@media(min-width:769px){
+  .booking-form-extra{max-height:none !important;overflow:visible !important}
+  .booking-expand-btn{display:none !important}
 }
 </style>
 
