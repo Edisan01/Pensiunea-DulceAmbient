@@ -18,7 +18,7 @@
   --stone:#8C867A; --green:#3F5F3A; --gold:#C7A057;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{background:var(--cream);color:var(--ink);font-family:'Manrope',sans-serif;font-weight:400;overflow-x:hidden}
 img{max-width:100%;display:block;object-fit:cover}
 a{color:inherit;text-decoration:none}
@@ -369,7 +369,7 @@ h2 em{font-style:italic}
 .cta-bg img{width:100%;height:100%;object-fit:cover}
 .cta-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(48,28,18,.5),rgba(48,28,18,.8))}
 .cta-content{position:relative;z-index:2;color:var(--cream)}
-.cta-title{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,72px);font-weight:300;margin-bottom:16px}
+.cta-title{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,72px);font-weight:300;margin-bottom:16px;color:#ffffff !important;text-shadow:0 2px 20px rgba(0,0,0,.3)}
 .cta-title em{font-style:italic;color:var(--gold)}
 .cta-sub{font-size:16px;color:rgba(250,246,239,.7);margin-bottom:48px}
 .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -539,6 +539,7 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
       <p class="reveal reveal-delay-2" style="font-size:15px;line-height:1.75;color:rgba(43,33,24,.85)">Toate camerele au lenjerie proaspăt călcată, baie privată și ferestre care dau spre curte sau spre grădină.</p>
     </div>
 
+    <div class="rooms-list" id="roomsList">
     <!-- Room 1 -->
     <div class="room-row reveal">
       <div class="room-img-wrap"><img src="zimmer-4-main.jpg" alt="Cameră Dublă" class="room-img"/></div>
@@ -613,6 +614,8 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
         <a href="#contact" class="btn-primary" style="align-self:flex-start">Întreabă disponibilitatea</a>
       </div>
     </div>
+    </div><!-- /rooms-list -->
+    <div class="rooms-dots" id="roomsDots"></div>
   </div>
 </section>
 <div class="section-sep"></div>
@@ -882,7 +885,7 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
   <div class="cta-bg"><img src="hero.jpg" alt="Pensiunea Dulce Ambient"/></div>
   <div class="cta-overlay"></div>
   <div class="cta-content">
-    <h2 class="cta-title reveal"><span style="font-weight:300">Cazare în</span> <span style="font-weight:600">Păuliș,</span><br/><em style="color:var(--gold);font-weight:300">aproape de Arad.</em></h2>
+    <h2 class="cta-title reveal"><span style="font-weight:300;color:#ffffff">Cazare în</span> <span style="font-weight:400;color:#ffffff">Păuliș,</span><br/><em style="color:var(--gold);font-weight:300">aproape de Arad.</em></h2>
     <p class="cta-sub reveal reveal-delay-1" style="color:rgba(250,246,239,.95);text-shadow:0 1px 8px rgba(0,0,0,.2)">Familia Lazăr vă așteaptă.</p>
     <div class="cta-btns reveal reveal-delay-2">
       <a href="tel:0744593171" class="btn-primary">📞 0744 593 171</a>
@@ -898,17 +901,7 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
         <div class="footer-brand">Pensiunea Dulce Ambient</div>
         <p class="footer-desc">O pensiune mică și familială în Păuliș, aproape de Arad. Administrată cu grijă de familia Lazăr.</p>
       </div>
-      <div>
-        <div class="footer-title">Navigare</div>
-        <div class="footer-links">
-          <a href="#camere">Camere</a>
-          <a href="#terasa">Curte & Terasă</a>
-          <a href="#mic-dejun">Mic dejun</a>
-          <a href="#galerie">Galerie</a>
-          <a href="#locatie">Locație</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
+
       <div>
         <div class="footer-title">Contact</div>
         <div class="footer-links">
@@ -918,7 +911,7 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Pensiunea Dulce Ambient · Familia Lazăr</span>
+      <span>© 2026 Pensiunea Dulce Ambient · Familia Lazăr</span>
       <span>Păuliș, Județul Arad, România</span>
     </div>
   </div>
@@ -960,56 +953,7 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
 
 // PROGRESSIVE DISCLOSURE
 
-// 1. ROOM CARDS - tap to expand on mobile
-function initRoomCards(){
-  if(window.innerWidth > 768) return;
-  document.querySelectorAll('.room-row').forEach((row, i) => {
-    const info = row.querySelector('.room-info');
-    if(!info) return;
-
-    // Get room data
-    const name = info.querySelector('.room-name')?.textContent || '';
-    const sub = info.querySelector('.room-sub')?.textContent || '';
-    const img = row.querySelector('.room-img-wrap');
-
-    // Wrap collapsible content
-    const collapsible = document.createElement('div');
-    collapsible.className = 'room-info-collapsible';
-    const desc = info.querySelector('.room-desc');
-    const features = info.querySelector('.room-features');
-    const btn = info.querySelector('.btn-primary');
-    if(desc) collapsible.appendChild(desc.cloneNode(true));
-    if(features) collapsible.appendChild(features.cloneNode(true));
-    if(btn) collapsible.appendChild(btn.cloneNode(true));
-
-    // Create toggle button
-    const toggle = document.createElement('button');
-    toggle.className = 'room-toggle';
-    toggle.innerHTML = `
-      <div class="room-toggle-left">
-        <span class="room-toggle-sub">0${i+1}</span>
-        <span class="room-toggle-name">${name}</span>
-        <span class="room-toggle-sub">${sub}</span>
-      </div>
-      <div class="room-toggle-icon">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#2B2118" stroke-width="2">
-          <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
-        </svg>
-      </div>`;
-
-    toggle.addEventListener('click', () => {
-      const isOpen = row.classList.contains('expanded');
-      document.querySelectorAll('.room-row.expanded').forEach(r => r.classList.remove('expanded'));
-      if(!isOpen) row.classList.add('expanded');
-    });
-
-    // Rebuild info section
-    info.innerHTML = '';
-    info.appendChild(toggle);
-    info.appendChild(collapsible);
-    info.style.padding = '0';
-  });
-}
+// Room cards - handled by CSS
 
 // 2. GALLERY - show 6, load more
 function initGallery(){
@@ -1095,8 +1039,36 @@ function initBookingForm(){
 }
 
 // Init all on load
+
+// ROOMS CAROUSEL DOTS (mobile)
+function initRoomsCarousel(){
+  if(window.innerWidth > 768) return;
+  const list = document.getElementById('roomsList');
+  const dotsContainer = document.getElementById('roomsDots');
+  if(!list || !dotsContainer) return;
+
+  const cards = list.querySelectorAll('.room-row');
+  dotsContainer.innerHTML = '';
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'rooms-dot' + (i===0?' active':'');
+    dot.addEventListener('click', () => {
+      cards[i].scrollIntoView({behavior:'smooth', block:'nearest', inline:'start'});
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  list.addEventListener('scroll', () => {
+    const idx = Math.round(list.scrollLeft / (list.offsetWidth * 0.8));
+    dotsContainer.querySelectorAll('.rooms-dot').forEach((d,i) => {
+      d.classList.toggle('active', i===idx);
+    });
+  }, {passive:true});
+}
+
 window.addEventListener('load', () => {
-  initRoomCards();
+  initRoomsCarousel();
   initGallery();
   initReviews();
   initBookingForm();
@@ -1249,7 +1221,10 @@ function sendWhatsApp() {
   .location-section{padding:56px 20px !important}
   .reviews-section{padding:56px 20px !important}
   .breakfast-section{padding:56px 20px !important}
-  .gallery-section{padding:56px 20px !important}
+  .gallery-section{padding:48px 0 !important}
+  .gallery-section > .container > div:first-child{padding:0 20px}
+  .gallery-section h2{padding:0 20px}
+  .gallery-section .eyebrow{padding:0 20px}
   .terrace-section{padding:56px 20px !important}
   .container{padding:0 !important}
   h2{font-size:clamp(30px,9vw,48px) !important;line-height:1.05 !important}
@@ -1354,14 +1329,30 @@ function sendWhatsApp() {
   .breakfast-img{aspect-ratio:4/3 !important;width:100%}
 
   /* GALLERY */
-  .gallery-section{padding:56px 20px !important}
-  .gallery-filters{gap:6px;margin:24px 0}
+  .gallery-section{padding:48px 0 !important}
+  .gallery-section > .container > div:first-child{padding:0 20px}
+  .gallery-section h2{padding:0 20px}
+  .gallery-section .eyebrow{padding:0 20px}
+  .gallery-filters{gap:6px;margin:24px 20px;flex-wrap:wrap}
   .filter-btn{padding:6px 14px;font-size:10px;letter-spacing:.08em}
   .gallery-grid{
-    grid-template-columns:1fr 1fr !important;
-    gap:3px
+    grid-template-columns:1fr 1fr 1fr !important;
+    gap:2px
   }
-  .gallery-item img{aspect-ratio:1/1 !important}
+  .gallery-item img{
+    aspect-ratio:1/1 !important;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .gallery-item{
+    position:relative;
+    overflow:hidden;
+  }
+  /* Tap hint overlay */
+  .gallery-item::after{
+    display:none;
+  }
 
   /* LOCATION + ABOUT */
   .location-section > .container > div{
@@ -1680,6 +1671,82 @@ footer .footer-brand{text-shadow:0 1px 3px rgba(0,0,0,.2)}
 #lightboxImg{max-width:90vw;max-height:90vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5)}
 #lightboxClose{position:fixed;top:24px;right:28px;color:#fff;font-size:32px;cursor:pointer;line-height:1;opacity:.7;transition:opacity .2s}
 #lightboxClose:hover{opacity:1}
+
+/* MOBILE ROOMS CAROUSEL */
+@media(max-width:768px){
+  .rooms-list{
+    display:flex !important;
+    overflow-x:auto !important;
+    scroll-snap-type:x mandatory;
+    gap:16px;
+    padding:0 20px 20px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    margin:0 -20px;
+  }
+  .rooms-list::-webkit-scrollbar{display:none}
+  .room-row, .room-row.reverse{
+    min-width:80vw !important;
+    max-width:80vw !important;
+    flex-shrink:0 !important;
+    scroll-snap-align:start;
+    display:flex !important;
+    flex-direction:column !important;
+    direction:ltr !important;
+    background:var(--cream);
+    box-shadow:var(--shadow-md);
+    border-radius:2px;
+    overflow:hidden;
+    margin-bottom:0 !important;
+  }
+  .room-img-wrap{
+    aspect-ratio:4/3 !important;
+    width:100% !important;
+    height:auto !important;
+    flex-shrink:0;
+  }
+  .room-img{
+    width:100%;height:100%;
+    object-fit:cover;
+  }
+  .room-info{
+    padding:20px !important;
+    display:flex !important;
+    flex-direction:column;
+    gap:0;
+  }
+  .room-number{font-size:10px;margin-bottom:6px}
+  .room-name{font-size:22px !important}
+  .room-sub{font-size:12px;margin-bottom:12px}
+  .room-price{margin-bottom:12px}
+  .room-desc{font-size:13px;line-height:1.65;margin-bottom:16px}
+  .room-features{gap:4px;margin-bottom:16px;flex-wrap:wrap}
+  .feature{font-size:9px;padding:3px 8px}
+  .room-info .btn-primary{
+    width:100%;text-align:center;
+    padding:12px;font-size:11px;
+  }
+
+  /* Dots indicator */
+  .rooms-dots{
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    margin-top:16px;
+    padding:0 20px;
+  }
+  .rooms-dot{
+    width:6px;height:6px;
+    border-radius:50%;
+    background:rgba(43,33,24,.2);
+    transition:background .3s;
+    cursor:pointer;
+  }
+  .rooms-dot.active{background:var(--gold)}
+}
+@media(min-width:769px){
+  .rooms-dots{display:none}
+}
 </style>
 
 <script>
@@ -1694,6 +1761,90 @@ if(waFloat && waTooltip){
     waTooltip.style.opacity = '0';
     waTooltip.style.transform = 'translateX(8px)';
   });
+}
+</script>
+
+
+<!-- AMBIENT AUDIO -->
+<button id="audioToggle" onclick="toggleAmbientAudio()" aria-label="Sunete naturale" style="
+  position:fixed;
+  bottom:32px;
+  left:32px;
+  z-index:998;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(43,33,24,.82);
+  color:#FAF6EF;
+  border:1px solid rgba(250,246,239,.25);
+  padding:9px 16px;
+  font-size:11px;
+  font-family:'Manrope',sans-serif;
+  letter-spacing:.08em;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+  border-radius:20px;
+  transition:all .3s;
+  white-space:nowrap;
+">
+  <svg id="audioIconOn" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FAF6EF" stroke-width="2" stroke-linecap="round">
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+  </svg>
+  <svg id="audioIconOff" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FAF6EF" stroke-width="2" stroke-linecap="round" style="display:none">
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+    <line x1="23" y1="9" x2="17" y2="15"></line>
+    <line x1="17" y1="9" x2="23" y2="15"></line>
+  </svg>
+  <span id="audioLabel">Sunete naturale</span>
+</button>
+
+<audio id="ambientAudio" loop preload="none">
+  <source src="https://cdn.freesound.org/previews/219/219828_3769224-lq.mp3" type="audio/mpeg">
+  <source src="https://www.soundjay.com/nature/sounds/birds-singing-1.mp3" type="audio/mpeg">
+</audio>
+
+<style>
+#audioToggle:hover{background:rgba(43,33,24,.95);border-color:rgba(250,246,239,.5)}
+#audioToggle.playing{background:rgba(199,160,87,.85);border-color:rgba(199,160,87,.9)}
+@media(max-width:768px){
+  #audioToggle{bottom:76px;left:16px;padding:8px 12px;font-size:10px}
+}
+</style>
+
+<script>
+let audioPlaying = false;
+const ambientAudio = document.getElementById('ambientAudio');
+const audioToggle = document.getElementById('audioToggle');
+const audioLabel = document.getElementById('audioLabel');
+const audioIconOn = document.getElementById('audioIconOn');
+const audioIconOff = document.getElementById('audioIconOff');
+
+// Set volume low - ambient background
+ambientAudio.volume = 0.35;
+
+function toggleAmbientAudio() {
+  if(!audioPlaying) {
+    ambientAudio.play().then(() => {
+      audioPlaying = true;
+      audioToggle.classList.add('playing');
+      audioLabel.textContent = 'Oprește sunetele';
+      audioIconOn.style.display = 'none';
+      audioIconOff.style.display = 'block';
+    }).catch(() => {
+      audioLabel.textContent = 'Audio indisponibil';
+      setTimeout(() => { audioLabel.textContent = 'Sunete naturale'; }, 2000);
+    });
+  } else {
+    ambientAudio.pause();
+    ambientAudio.currentTime = 0;
+    audioPlaying = false;
+    audioToggle.classList.remove('playing');
+    audioLabel.textContent = 'Sunete naturale';
+    audioIconOn.style.display = 'block';
+    audioIconOff.style.display = 'none';
+  }
 }
 </script>
 
