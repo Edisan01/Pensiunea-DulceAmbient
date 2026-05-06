@@ -957,41 +957,47 @@ footer{background:var(--ink);color:var(--cream);padding:60px 40px 32px}
 
 // 2. GALLERY - show 6, load more
 function initGallery(){
-  // Desktop: show only first 12, rest hidden
-  if(window.innerWidth > 768) {
-    const grid = document.querySelector('.gallery-grid');
-    const items = document.querySelectorAll('.gallery-item');
-    if(items.length > 12) {
-      items.forEach((item, i) => {
-        if(i >= 12) item.classList.add('gallery-hidden-desktop');
+  const grid = document.querySelector('.gallery-grid');
+  const items = Array.from(document.querySelectorAll('.gallery-item'));
+  let showMoreBtn = null;
+  let allVisible = false;
+
+  // Desktop: show only first 12
+  function applyDesktopLimit() {
+    if(window.innerWidth <= 768) return;
+    if(allVisible) return;
+    items.forEach((item, i) => {
+      if(i >= 12) item.classList.add('gallery-hidden-desktop');
+      else item.classList.remove('gallery-hidden-desktop');
+    });
+    if(!showMoreBtn && items.length > 12) {
+      showMoreBtn = document.createElement('button');
+      showMoreBtn.className = 'gallery-show-more-desktop';
+      showMoreBtn.textContent = `+ Arată toate fotografiile (${items.length - 12} mai multe)`;
+      showMoreBtn.addEventListener('click', () => {
+        allVisible = true;
+        items.forEach(item => item.classList.remove('gallery-hidden-desktop'));
+        showMoreBtn.remove();
+        showMoreBtn = null;
       });
-      const btn = document.createElement('button');
-      btn.className = 'gallery-show-more-desktop';
-      const hidden = items.length - 12;
-      btn.textContent = `+ Arată toate fotografiile (${hidden} mai multe)`;
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.gallery-hidden-desktop').forEach(el => {
-          el.classList.remove('gallery-hidden-desktop');
-          el.classList.add('gallery-shown-desktop');
-        });
-        btn.remove();
-      });
-      grid.appendChild(btn);
+      grid.appendChild(showMoreBtn);
     }
   }
 
-  if(window.innerWidth > 768) return;
-  const items = document.querySelectorAll('.gallery-item');
-  const grid = document.querySelector('.gallery-grid');
-  if(!grid || items.length <= 6) return;
+  applyDesktopLimit();
 
-  items.forEach((item, i) => {
+  if(window.innerWidth > 768) return;
+  const mobileItems = document.querySelectorAll('.gallery-item');
+  const mobileGrid = document.querySelector('.gallery-grid');
+  if(!mobileGrid || mobileItems.length <= 6) return;
+
+  mobileItems.forEach((item, i) => {
     if(i >= 6) item.classList.add('gallery-hidden');
   });
 
   const btn = document.createElement('button');
   btn.className = 'gallery-show-more';
-  btn.textContent = `+ Vezi toate fotografiile (${items.length})`;
+  btn.textContent = `+ Vezi toate fotografiile (${mobileItems.length})`;
   btn.addEventListener('click', () => {
     document.querySelectorAll('.gallery-hidden').forEach(el => {
       el.classList.remove('gallery-hidden');
@@ -999,6 +1005,7 @@ function initGallery(){
     });
     btn.remove();
   });
+  mobileGrid.appendChild(btn);
   grid.appendChild(btn);
 }
 
@@ -1152,6 +1159,9 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const filter = btn.dataset.filter;
+    // When filtering, show all matching items regardless of desktop limit
+    allVisible = true;
+    if(showMoreBtn) { showMoreBtn.remove(); showMoreBtn = null; }
     document.querySelectorAll('.gallery-item').forEach(item => {
       item.dataset.hidden = filter !== 'all' && item.dataset.cat !== filter;
     });
